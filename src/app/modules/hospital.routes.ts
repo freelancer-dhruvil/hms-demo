@@ -37,32 +37,32 @@ export const routes: Routes = [
             { path:'dashboard', component: HospitalDashboardComponent },
             { 
                 path:'appointment',
-                component:  HospitalAppointmentComponent,
                 children: [
+                    { path:'', component: HospitalAppointmentComponent },
                     { path:'details', component: HospitalAppointmentDetailsComponent },
                     { path:'manage', component: HospitalManageAppointmentComponent },
                 ]
             },
             { 
                 path:'patient',
-                component:  HospitalPatientComponent,
                 children: [
+                    { path:'', component: HospitalPatientComponent },
                     { path:'details', component: HospitalPatientDetailsComponent },
                     { path:'manage', component: HospitalManagePatientComponent },
                 ]
             },
             { 
                 path:'doctor',
-                component:  HospitalDoctorComponent,
                 children: [
+                    { path:'', component: HospitalDoctorComponent },
                     { path:'details', component: HospitalDoctorDetailsComponent },
                     { path:'manage', component: HospitalManageDoctorComponent },
                 ]
             },
             { 
                 path:'department',
-                component:  HospitalDepartmentComponent,
                 children: [
+                    { path:'', component: HospitalDepartmentComponent },
                     { path:'details', component: HospitalDepartmentDetailsComponent },
                     { path:'manage', component: HospitalManageDepartmentComponent },
                 ]
@@ -73,24 +73,24 @@ export const routes: Routes = [
             },
             { 
                 path:'payment',
-                component:  HospitalPaymentComponent,
                 children: [
+                    { path:'', component: HospitalPaymentComponent },
                     { path:'details', component: HospitalPaymentDetailsComponent },
                     { path:'manage', component: HospitalManagePaymentComponent },
                 ]
             },
             { 
                 path:'inventory',
-                component:  HospitalProductComponent,
                 children: [
+                    { path:'', component: HospitalProductComponent },
                     { path:'details', component: HospitalProductDetailsComponent },
                     { path:'manage', component: HospitalManageProductComponent },
                 ]
             },
             { 
                 path:'message',
-                component:  HospitalMessageComponent,
                 children: [
+                    { path:'', component: HospitalMessageComponent },
                     { path:'details', component: HospitalMessageDetailsComponent }
                 ]
             },
