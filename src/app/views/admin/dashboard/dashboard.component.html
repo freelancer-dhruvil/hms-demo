@@ -1,1 +1,10 @@
 <p>Dashboard Component Works</p>
+
+<card-stats [cardStats]="invoiceStats"></card-stats>
+<card-stats [cardStats]="patientStats"></card-stats>
+<card-stats [cardStats]="appointmentStats"></card-stats>
+<card-stats [cardStats]="bedroomStats"></card-stats>
+
+<card-bar-chart [chart]="patientOverviewByAge"></card-bar-chart>
+<card-line-chart [chart]="revenueOverview"></card-line-chart>
+<card-pie-chart [chart]="patientOverviewByDept"></card-pie-chart>
