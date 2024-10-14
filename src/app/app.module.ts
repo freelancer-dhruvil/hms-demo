@@ -3,6 +3,7 @@ import { AppComponent } from "./app.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app.routes";
 import { HospitalModule } from "./modules/hospital.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -11,7 +12,8 @@ import { HospitalModule } from "./modules/hospital.module";
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HospitalModule
+        HospitalModule,
+        BrowserAnimationsModule,
     ],
     exports: [
         HospitalModule

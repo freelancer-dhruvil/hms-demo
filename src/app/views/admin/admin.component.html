@@ -5,10 +5,18 @@
 4. ROUTER OUTLET TO LOAD CHILD COMPONENT (DEFAULT BEING "DASHBOARD") -->
 
 
-<admin-header></admin-header>
-<p>Admin Component Works</p>
-<div>
-    <router-outlet></router-outlet>
-</div>
 
-<admin-footer></admin-footer>
+<div class="h-screen flex">
+    <admin-sidebar></admin-sidebar>
+    <div class="h-full w-full flex flex-column">
+        <div class="flex-none">
+            <admin-header></admin-header>
+        </div>
+        <div class="flex-grow-1">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="flex-none">
+            <admin-footer></admin-footer>
+        </div>
+    </div>
+</div>

@@ -2,3 +2,33 @@
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 @import "primeflex/primeflex.css";
+@import 'primeflex/primeflex.scss';
+
+
+html, body {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Overrides */
+.p-menu .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus > .p-menuitem-content {
+    color: #4b5563;
+    background: none;
+}
+
+
+
+
+
+
+
+/* Class Reusability */
+
+.custom-sidebar-container {
+    @include styleclass('w-15rem surface-100 px-2 py-4 border-noround border-none h-full');
+    
+}
+
+.sidebar-nav-link {
+    // @include styleclass('');
+}
