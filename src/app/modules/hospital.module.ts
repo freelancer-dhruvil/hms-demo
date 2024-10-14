@@ -11,6 +11,7 @@ import { environment } from "../../environments/environment";
 
 import { HospitalRouteComponentsArray, HospitalRoutingModule } from "./hospital.routes";
 import { SharedModule } from "../components/shared.module";
+import { StaticDataService } from "../services/data.service";
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { SharedModule } from "../components/shared.module";
       SharedModule
     ],
     providers: [
+      StaticDataService, // TODELETE
       {
         provide: APOLLO_OPTIONS,
         useFactory: (httpLink: HttpLink) => {
