@@ -5,6 +5,7 @@ import { Subject } from "rxjs";
 import { Appointment, AvailableSlot, ScheduleModel } from "../models/schedule.model";
 import { RequestModel } from "../models/request.model";
 import { ActivityModel } from "../models/activity.model";
+import { MenuItem } from "primeng/api";
 
 @Injectable({
     providedIn: 'root'
@@ -53,37 +54,37 @@ export class StaticDataService {
             {
                 name: 'Child',
                 records: [
-                    { date: new Date(2024,10,6), value: 93 },
-                    { date: new Date(2024,10,7), value: 81 },
-                    { date: new Date(2024,10,8), value: 124 },
-                    { date: new Date(2024,10,9), value: 110 },
-                    { date: new Date(2024,10,10), value: 120 },
-                    { date: new Date(2024,10,11), value: 85 },
-                    { date: new Date(2024,10,12), value: 100 }
+                    { date: new Date(2024, 10, 6), value: 93 },
+                    { date: new Date(2024, 10, 7), value: 81 },
+                    { date: new Date(2024, 10, 8), value: 124 },
+                    { date: new Date(2024, 10, 9), value: 110 },
+                    { date: new Date(2024, 10, 10), value: 120 },
+                    { date: new Date(2024, 10, 11), value: 85 },
+                    { date: new Date(2024, 10, 12), value: 100 }
                 ]
             },
             {
                 name: 'Adult',
                 records: [
-                    { date: new Date(2024,10,6), value: 52 },
-                    { date: new Date(2024,10,7), value: 41 },
-                    { date: new Date(2024,10,8), value: 72 },
-                    { date: new Date(2024,10,9), value: 80 },
-                    { date: new Date(2024,10,10), value: 90 },
-                    { date: new Date(2024,10,11), value: 72 },
-                    { date: new Date(2024,10,12), value: 80 }
+                    { date: new Date(2024, 10, 6), value: 52 },
+                    { date: new Date(2024, 10, 7), value: 41 },
+                    { date: new Date(2024, 10, 8), value: 72 },
+                    { date: new Date(2024, 10, 9), value: 80 },
+                    { date: new Date(2024, 10, 10), value: 90 },
+                    { date: new Date(2024, 10, 11), value: 72 },
+                    { date: new Date(2024, 10, 12), value: 80 }
                 ]
             },
             {
                 name: 'Elderly',
                 records: [
-                    { date: new Date(2024,10,6), value: 22 },
-                    { date: new Date(2024,10,7), value: 0 },
-                    { date: new Date(2024,10,8), value: 18 },
-                    { date: new Date(2024,10,9), value: 37 },
-                    { date: new Date(2024,10,10), value: 0 },
-                    { date: new Date(2024,10,11), value: 0 },
-                    { date: new Date(2024,10,12), value: 42 }
+                    { date: new Date(2024, 10, 6), value: 22 },
+                    { date: new Date(2024, 10, 7), value: 0 },
+                    { date: new Date(2024, 10, 8), value: 18 },
+                    { date: new Date(2024, 10, 9), value: 37 },
+                    { date: new Date(2024, 10, 10), value: 0 },
+                    { date: new Date(2024, 10, 11), value: 0 },
+                    { date: new Date(2024, 10, 12), value: 42 }
                 ]
             }
         ]
@@ -126,7 +127,7 @@ export class StaticDataService {
                 ]
             }
         ]
-    }    
+    }
 
     patientOverviewYearChart: ChartModel = {
         title: 'Patient Overview',
@@ -186,7 +187,7 @@ export class StaticDataService {
                 ]
             }
         ]
-    };    
+    };
     //#endregion
 
     //#region Revenue
@@ -199,25 +200,25 @@ export class StaticDataService {
             {
                 name: 'Income',
                 records: [
-                    { date: new Date(2024,10,6), value: 1145 },
-                    { date: new Date(2024,10,7), value: 900 },
-                    { date: new Date(2024,10,8), value: 1200 },
-                    { date: new Date(2024,10,9), value: 1100 },
-                    { date: new Date(2024,10,10), value: 1495 },
-                    { date: new Date(2024,10,11), value: 800 },
-                    { date: new Date(2024,10,12), value: 1300 }
+                    { date: new Date(2024, 10, 6), value: 1145 },
+                    { date: new Date(2024, 10, 7), value: 900 },
+                    { date: new Date(2024, 10, 8), value: 1200 },
+                    { date: new Date(2024, 10, 9), value: 1100 },
+                    { date: new Date(2024, 10, 10), value: 1495 },
+                    { date: new Date(2024, 10, 11), value: 800 },
+                    { date: new Date(2024, 10, 12), value: 1300 }
                 ]
             },
             {
                 name: 'Expense',
                 records: [
-                    { date: new Date(2024,10,6), value: 825 },
-                    { date: new Date(2024,10,7), value: 700 },
-                    { date: new Date(2024,10,8), value: 400 },
-                    { date: new Date(2024,10,9), value: 790 },
-                    { date: new Date(2024,10,10), value: 415 },
-                    { date: new Date(2024,10,11), value: 720 },
-                    { date: new Date(2024,10,12), value: 800 }
+                    { date: new Date(2024, 10, 6), value: 825 },
+                    { date: new Date(2024, 10, 7), value: 700 },
+                    { date: new Date(2024, 10, 8), value: 400 },
+                    { date: new Date(2024, 10, 9), value: 790 },
+                    { date: new Date(2024, 10, 10), value: 415 },
+                    { date: new Date(2024, 10, 11), value: 720 },
+                    { date: new Date(2024, 10, 12), value: 800 }
                 ]
             }
         ]
@@ -250,7 +251,7 @@ export class StaticDataService {
                 ]
             }
         ]
-    }    
+    }
 
     revenueYearChart: ChartModel = {
         title: 'Revenue',
@@ -261,35 +262,35 @@ export class StaticDataService {
             {
                 name: 'Income',
                 records: [
-                    { date: new Date(2024,1,1), value: 21881 },
-                    { date: new Date(2024,2,1), value: 19124 },
-                    { date: new Date(2024,3,1), value: 15810 },
-                    { date: new Date(2024,4,1), value: 14320 },
-                    { date: new Date(2024,5,1), value: 16785 },
-                    { date: new Date(2024,6,1), value: 14600 },
-                    { date: new Date(2024,7,1), value: 16581 },
-                    { date: new Date(2024,8,1), value: 20424 },
-                    { date: new Date(2024,9,1), value: 21210 },
-                    { date: new Date(2024,10,1), value: 19720 },
-                    { date: new Date(2024,11,1), value: 17325 },
-                    { date: new Date(2024,12,1), value: 15610 }
+                    { date: new Date(2024, 1, 1), value: 21881 },
+                    { date: new Date(2024, 2, 1), value: 19124 },
+                    { date: new Date(2024, 3, 1), value: 15810 },
+                    { date: new Date(2024, 4, 1), value: 14320 },
+                    { date: new Date(2024, 5, 1), value: 16785 },
+                    { date: new Date(2024, 6, 1), value: 14600 },
+                    { date: new Date(2024, 7, 1), value: 16581 },
+                    { date: new Date(2024, 8, 1), value: 20424 },
+                    { date: new Date(2024, 9, 1), value: 21210 },
+                    { date: new Date(2024, 10, 1), value: 19720 },
+                    { date: new Date(2024, 11, 1), value: 17325 },
+                    { date: new Date(2024, 12, 1), value: 15610 }
                 ]
             },
             {
                 name: 'Expense',
                 records: [
-                    { date: new Date(2024,1,1), value: 11441 },
-                    { date: new Date(2024,2,1), value: 12372 },
-                    { date: new Date(2024,3,1), value: 10280 },
-                    { date: new Date(2024,4,1), value: 8490 },
-                    { date: new Date(2024,5,1), value: 7372 },
-                    { date: new Date(2024,6,1), value: 7280 },
-                    { date: new Date(2024,7,1), value: 5541 },
-                    { date: new Date(2024,8,1), value: 3972 },
-                    { date: new Date(2024,9,1), value: 4280 },
-                    { date: new Date(2024,10,1), value: 8890 },
-                    { date: new Date(2024,11,1), value: 10172 },
-                    { date: new Date(2024,12,1), value: 12180 }
+                    { date: new Date(2024, 1, 1), value: 11441 },
+                    { date: new Date(2024, 2, 1), value: 12372 },
+                    { date: new Date(2024, 3, 1), value: 10280 },
+                    { date: new Date(2024, 4, 1), value: 8490 },
+                    { date: new Date(2024, 5, 1), value: 7372 },
+                    { date: new Date(2024, 6, 1), value: 7280 },
+                    { date: new Date(2024, 7, 1), value: 5541 },
+                    { date: new Date(2024, 8, 1), value: 3972 },
+                    { date: new Date(2024, 9, 1), value: 4280 },
+                    { date: new Date(2024, 10, 1), value: 8890 },
+                    { date: new Date(2024, 11, 1), value: 10172 },
+                    { date: new Date(2024, 12, 1), value: 12180 }
                 ]
             }
         ]
@@ -402,7 +403,7 @@ export class StaticDataService {
             }
         ]
     }
-    
+
     patientDeptYearChart: ChartModel = {
         title: 'Patient Overview',
         description: 'by Departments',
@@ -478,7 +479,7 @@ export class StaticDataService {
                 ]
             }
         ]
-    } 
+    }
     //#endregion
     //#endregion
 
@@ -661,6 +662,65 @@ export class StaticDataService {
         )
     ];
 
+    sideNavItems: MenuItem[] = [
+        {
+            label: 'Dashboard',
+            icon: 'pi pi-th-large',
+            routerLink: 'dashboard',
+            routerLinkActiveOptions: 'sidebar-nav-link-active',
+        },
+        {
+            label: 'Appointments',
+            icon: 'pi pi-check-square',
+            routerLink: 'appointment',
+            routerLinkActiveOptions: 'sidebar-nav-link-active',
+        },
+        {
+            label: 'Patients',
+            icon: 'pi pi-id-card',
+            routerLink: 'patient',
+            routerLinkActiveOptions: 'sidebar-nav-link-active',
+        },
+        {
+            label: 'Doctors',
+            icon: 'pi pi-users',
+            routerLink: 'doctor',
+            routerLinkActiveOptions: 'sidebar-nav-link-active',
+        },
+        {
+            label: 'Departments',
+            icon: 'pi pi-building',
+            routerLink: 'department',
+            routerLinkActiveOptions: 'sidebar-nav-link-active',
+        },
+        {
+            label: `Doctor's Schedule`,
+            icon: 'pi pi-calendar-plus',
+            routerLink: 'schedule',
+            routerLinkActiveOptions: 'sidebar-nav-link-active',
+        },
+        {
+            label: 'Payments',
+            icon: 'pi pi-credit-card',
+            routerLink: 'payment',
+            routerLinkActiveOptions: 'sidebar-nav-link-active',
+        },
+        {
+            label: 'Inventory',
+            icon: 'pi pi-box',
+            routerLink: 'inventory',
+            routerLinkActiveOptions: 'sidebar-nav-link-active',
+        },
+        {
+            label: 'Messages',
+            icon: 'pi pi-comments',
+            routerLink: 'message',
+            routerLinkActiveOptions: 'sidebar-nav-link-active',
+            badge: "7"
+        },
+
+    ];
+
     constructor() {
     }
 
@@ -712,13 +772,13 @@ export class StaticDataService {
         const subject = new Subject<any>();
 
         setTimeout(() => {
-            switch(duration) {
+            switch (duration) {
                 case 'week': subject.next(this.patientOverviewWeekChart);
-                break;
+                    break;
                 case 'month': subject.next(this.patientOverviewMonthChart);
-                break;
+                    break;
                 case 'year': subject.next(this.patientOverviewYearChart);
-                break;
+                    break;
             }
             subject.complete();
         }, 2000);
@@ -730,13 +790,13 @@ export class StaticDataService {
         const subject = new Subject<any>();
 
         setTimeout(() => {
-            switch(duration) {
+            switch (duration) {
                 case 'week': subject.next(this.revenueWeekChart);
-                break;
+                    break;
                 case 'month': subject.next(this.revenueMonthChart);
-                break;
+                    break;
                 case 'year': subject.next(this.revenueYearChart);
-                break;
+                    break;
             }
             subject.complete();
         }, 2000);
@@ -748,13 +808,13 @@ export class StaticDataService {
         const subject = new Subject<any>();
 
         setTimeout(() => {
-            switch(duration) {
+            switch (duration) {
                 case 'week': subject.next(this.patientDeptWeekChart);
-                break;
+                    break;
                 case 'month': subject.next(this.patientDeptMonthChart);
-                break;
+                    break;
                 case 'year': subject.next(this.patientDeptYearChart);
-                break;
+                    break;
             }
             subject.complete();
         }, 2000);
@@ -791,6 +851,17 @@ export class StaticDataService {
             subject.next(this.recentActivities);
             subject.complete();
         }, 2000);
+
+        return subject.asObservable();
+    }
+
+    getSideNavRoutesItems() {
+        const subject = new Subject<any>();
+
+        setTimeout(() => {
+            subject.next(this.sideNavItems);
+            subject.complete();
+        }, 500);
 
         return subject.asObservable();
     }

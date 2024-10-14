@@ -16,19 +16,21 @@ html, body {
     background: none;
 }
 
-
-
-
-
-
+.p-menu-end {
+    flex-grow: 1;
+}
 
 /* Class Reusability */
 
 .custom-sidebar-container {
-    @include styleclass('w-15rem surface-100 px-2 py-4 border-noround border-none h-full');
-    
+    @include styleclass('w-15rem surface-100 px-2 py-4 border-noround border-none h-full flex flex-column');
+
+    .sidebar-nav-link {
+        @include styleclass('hover:bg-cyan-200 m-2 border-round-top-3xl border-round-bottom-3xl my-1');
+    }
+
+    .sidebar-nav-link-active {
+        @include styleclass('bg-cyan-200 text-black-alpha-90 font-bold');
+    }
 }
 
-.sidebar-nav-link {
-    // @include styleclass('');
-}

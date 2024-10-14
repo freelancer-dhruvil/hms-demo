@@ -27,6 +27,10 @@ import { AdminSidebarComponent } from "./sidebars/admin-sidebar/admin-sidebar.co
 import { BadgeModule } from 'primeng/badge';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
+import { SkeletonModule } from 'primeng/skeleton';
+import { ToastModule } from 'primeng/toast';
+import { BottomBannerComponent } from "./sidebars/bottom-banner/bottom-banner.component";
+import { CardModule } from 'primeng/card';
 
 const SharedComponents: any[] = [
     // Cards
@@ -48,8 +52,8 @@ const SharedComponents: any[] = [
     // Navbars
 
     // Sidebars
-    AdminSidebarComponent
-    
+    AdminSidebarComponent,
+    BottomBannerComponent,
     // Maps
 ];
 
@@ -77,6 +81,9 @@ const SharedComponents: any[] = [
         BadgeModule,
         AvatarModule,
         AvatarGroupModule,
+        SkeletonModule,
+        ToastModule,
+        CardModule,
     ],
     exports: [
        SharedComponents

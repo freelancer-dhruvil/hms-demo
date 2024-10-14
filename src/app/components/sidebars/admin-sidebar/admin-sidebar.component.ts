@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { StaticDataService } from '../../../services/data.service';
+import { UiService } from '../../../services/ui/ui.service';
+import { ToastService } from '../../../services/toast/toast.service';
 
 @Component({
     selector: 'admin-sidebar',
@@ -7,73 +10,35 @@ import { MenuItem } from 'primeng/api';
 })
 export class AdminSidebarComponent implements OnInit {
 
-    items: MenuItem[] | undefined;
+    public items: MenuItem[] = [];
+    public sideNavItemsLoading: boolean = false;
+    public isBottomBannerVisible: boolean = true;
 
-    constructor() { }
+    constructor(
+        private readonly _dataService: StaticDataService,
+        private readonly _uiService: UiService,
+        private readonly _toastService: ToastService,
+    ) { }
 
     ngOnInit() {
         this._loadSideBar();
     }
 
     private _loadSideBar(): void {
-        this.items = [
-            {
-                label: 'Dashboard',
-                icon: 'pi pi-th-large',
-                routerLink: 'dashboard',
-                routerLinkActiveOptions: 'bg-cyan-200 text-black-alpha-90 font-bold',
-            },
-            {
-                label: 'Appointments',
-                icon: 'pi pi-check-square',
-                routerLink: 'appointment',
-                routerLinkActiveOptions: 'bg-cyan-200 text-black-alpha-90 font-bold',
-            },
-            {
-                label: 'Patients',
-                icon: 'pi pi-id-card',
-                routerLink: 'patient',
-                routerLinkActiveOptions: 'bg-cyan-200 text-black-alpha-90 font-bold',
-            },
-            {
-                label: 'Doctors',
-                icon: 'pi pi-users',
-                routerLink: 'doctor',
-                routerLinkActiveOptions: 'bg-cyan-200 text-black-alpha-90 font-bold',
-            },
-            {
-                label: 'Departments',
-                icon: 'pi pi-building',
-                routerLink: 'department',
-                routerLinkActiveOptions: 'bg-cyan-200 text-black-alpha-90 font-bold',
-            },
-            {
-                label: `Doctor's Schedule`,
-                icon: 'pi pi-calendar-plus',
-                routerLink: 'schedule',
-                routerLinkActiveOptions: 'bg-cyan-200 text-black-alpha-90 font-bold',
-            },
-            {
-                label: 'Payments',
-                icon: 'pi pi-credit-card',
-                routerLink: 'payment',
-                routerLinkActiveOptions: 'bg-cyan-200 text-black-alpha-90 font-bold',
-            },
-            {
-                label: 'Inventory',
-                icon: 'pi pi-box',
-                routerLink: 'inventory',
-                routerLinkActiveOptions: 'bg-cyan-200 text-black-alpha-90 font-bold',
-            },
-            {
-                label: 'Messages',
-                icon: 'pi pi-comments',
-                routerLink: 'message',
-                routerLinkActiveOptions: 'bg-cyan-200 text-black-alpha-90 font-bold',
-                badge: "7"
-            },
 
-        ]
+        this.sideNavItemsLoading = true;
+
+        this._dataService.getSideNavRoutesItems().subscribe({
+            next: (items: MenuItem[]) => { 
+                this.items = items;
+                this._uiService.sideBarNavItems = items;
+            },
+            error: (err: any) => { 
+                console.log("something went worng::", err); 
+                this._toastService.showSuccess("Error", "Something went wrong");
+            },
+            complete: () => { this.sideNavItemsLoading = false; }
+        });
     }
 }
 

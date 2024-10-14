@@ -4,6 +4,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app.routes";
 import { HospitalModule } from "./modules/hospital.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from "primeng/api";
+
 
 @NgModule({
     declarations: [
@@ -14,11 +17,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         AppRoutingModule,
         HospitalModule,
         BrowserAnimationsModule,
+        ToastModule,
     ],
     exports: [
         HospitalModule
     ],
-    providers: [],
+    providers: [
+        MessageService,
+    ],
     bootstrap: [AppComponent]
 })
 
