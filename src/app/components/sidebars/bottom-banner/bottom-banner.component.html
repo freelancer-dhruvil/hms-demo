@@ -1,1 +1,29 @@
-banner bottom
+<div class="h-fit w-full surface-700 border-round-2xl p-3 flex flex-column">
+
+    <div class="flex justify-content-between align-items-center flex-none w-full mb-5">
+        <span class="bg-cyan-100 w-fit p-3 border-round-xl">
+            <i class="pi pi-unlock" style="font-size: 1.5rem"></i>
+        </span>
+        <span>
+            <p-button (onClick)="closeBanner()" styleClass="text-white" icon="pi pi-times" [rounded]="true" [text]="true" severity="secondary" />
+        </span>
+    </div>
+
+    <div class="flex-grow-1 flex flex-column justify-content-end w-fit line-height-3 gap-2">
+
+        <span class="text-lg text-cyan-200 font-bold">
+            Unlock New Features
+        </span>
+        <span class="text-white">
+            & Maximize Your Hospital Management Efficiency
+        </span>
+    
+        <div class="flex justify-content-between align-items-center">
+            <a class="text-cyan-200 text-sm cursor-pointer">
+                What's New?
+            </a>
+
+            <p-button styleClass="bg-white" label="Upgrade" [text]="true" [raised]="true" severity="secondary" />
+        </div>
+    </div>
+</div>

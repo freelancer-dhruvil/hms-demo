@@ -30,7 +30,7 @@
         @else {
             <div class="h-full flex flex-column justify-content-end">
                 @if (isBottomBannerVisible) {
-                    <admin-bottom-banner></admin-bottom-banner>
+                    <admin-bottom-banner (bottomBannerVisible)="isBottomBannerVisible = $event"></admin-bottom-banner>
                 }
             </div>
         }
