@@ -12,6 +12,9 @@ export class AdminHeaderComponent implements OnInit {
             label: 'Edit Profile',
             icon: 'pi pi-user-edit',
             routerLink: "my-profile",
+            state: {
+                isUndread: true,
+            },
         },
         {
             label: 'Sign Out',

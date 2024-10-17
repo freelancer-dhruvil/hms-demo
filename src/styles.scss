@@ -20,14 +20,10 @@ html, body {
     flex-grow: 1;
 }
 
-.p-button{
-    padding: 8px;
-}
-
 /* Class Reusability */
 
 .custom-sidebar-container {
-    @include styleclass('w-16rem surface-100 px-2 py-4 border-noround border-none h-full flex flex-column');
+    @include styleclass('w-16rem surface-100 px-2 py-4 border-noround border-none h-full overflow-auto flex flex-column');
 
     .sidebar-nav-link {
         @include styleclass('hover:bg-cyan-200 m-2 border-round-top-3xl border-round-bottom-3xl my-1');
