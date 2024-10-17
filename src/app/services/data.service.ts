@@ -668,54 +668,144 @@ export class StaticDataService {
             icon: 'pi pi-th-large',
             routerLink: 'dashboard',
             routerLinkActiveOptions: 'sidebar-nav-link-active',
+            children: [
+                {
+                    subLabel: 'Manage',
+                    routerLink: 'manage'
+                },
+                {
+                    subLabel: 'Details',
+                    routerLink: 'details'
+                },
+            ],
         },
         {
             label: 'Appointments',
             icon: 'pi pi-check-square',
             routerLink: 'appointment',
             routerLinkActiveOptions: 'sidebar-nav-link-active',
+            children: [
+                {
+                    subLabel: 'Manage',
+                    routerLink: 'manage'
+                },
+                {
+                    subLabel: 'Details',
+                    routerLink: 'details'
+                },
+            ],
         },
         {
             label: 'Patients',
             icon: 'pi pi-id-card',
             routerLink: 'patient',
             routerLinkActiveOptions: 'sidebar-nav-link-active',
+            children: [
+                {
+                    subLabel: 'Manage',
+                    routerLink: 'manage'
+                },
+                {
+                    subLabel: 'Details',
+                    routerLink: 'details'
+                },
+            ],
         },
         {
             label: 'Doctors',
             icon: 'pi pi-users',
             routerLink: 'doctor',
             routerLinkActiveOptions: 'sidebar-nav-link-active',
+            children: [
+                {
+                    subLabel: 'Manage',
+                    routerLink: 'manage'
+                },
+                {
+                    subLabel: 'Details',
+                    routerLink: 'details'
+                },
+            ],
         },
         {
             label: 'Departments',
             icon: 'pi pi-building',
             routerLink: 'department',
             routerLinkActiveOptions: 'sidebar-nav-link-active',
+            children: [
+                {
+                    subLabel: 'Manage',
+                    routerLink: 'manage'
+                },
+                {
+                    subLabel: 'Details',
+                    routerLink: 'details'
+                },
+            ],
         },
         {
             label: `Doctor's Schedule`,
             icon: 'pi pi-calendar-plus',
             routerLink: 'schedule',
             routerLinkActiveOptions: 'sidebar-nav-link-active',
+            children: [
+                {
+                    subLabel: 'Manage',
+                    routerLink: 'manage'
+                },
+                {
+                    subLabel: 'Details',
+                    routerLink: 'details'
+                },
+            ],
         },
         {
             label: 'Payments',
             icon: 'pi pi-credit-card',
             routerLink: 'payment',
             routerLinkActiveOptions: 'sidebar-nav-link-active',
+            children: [
+                {
+                    subLabel: 'Manage',
+                    routerLink: 'manage'
+                },
+                {
+                    subLabel: 'Details',
+                    routerLink: 'details'
+                },
+            ],
         },
         {
             label: 'Inventory',
             icon: 'pi pi-box',
             routerLink: 'inventory',
             routerLinkActiveOptions: 'sidebar-nav-link-active',
+            children: [
+                {
+                    subLabel: 'Manage',
+                    routerLink: 'manage'
+                },
+                {
+                    subLabel: 'Details',
+                    routerLink: 'details'
+                },
+            ],
         },
         {
             label: 'Messages',
             icon: 'pi pi-comments',
             routerLink: 'message',
             routerLinkActiveOptions: 'sidebar-nav-link-active',
+            children: [
+                {
+                    subLabel: 'Manage',
+                    routerLink: 'manage'
+                },
+                {
+                    subLabel: 'Details',
+                    routerLink: 'details'
+                },
+            ],
             badge: "7"
         },
 

@@ -1,10 +1,48 @@
 <div class="p-4 flex justify-content-between w-full">
-    <div>
-        <h1 class="m-0">Appointments</h1>
-    </div>
-    <div>
-        <span class="pi pi-search flex p-3 align-items-center justify-content-center cursor-pointer hover:surface-200 text-xl surface-100 border-round-2xl">
 
-        </span>
+    <div class="flex gap-4 align-items-center">
+
+        @if (isSecondaryPage) {
+            <button (click)="navigateToParent()" class="header-icon-button pi pi-arrow-left h-fit">
+            </button>
+        }
+
+        <div class="flex flex-column gap-2">
+            <h1 class="m-0">{{ primaryHeader }}</h1>
+            @if (isSecondaryPage) {
+                <span class="m-0"> {{ secondaryHeader }} </span>
+            }
+        </div>
+
+    </div>
+
+
+
+    <div class="flex gap-3 align-items-center h-3rem">
+
+        <p-iconField class="h-full" iconPosition="left">
+            <p-inputIcon styleClass="pi pi-search" />
+            <input type="text" class="header-search" pInputText placeholder="Search anything" />
+        </p-iconField>
+
+        <button class="header-icon-button pi pi-cog">
+        </button>
+
+        <button class="header-icon-button pi pi-bell">
+            @if (isUnreadNotification) {
+            <span class="unread-stage-dot">•</span>
+            }
+        </button>
+
+        <button class="header-text-button font-bold" (click)="userProfileMenu.toggle($event)">
+            <p-avatar class="border-round-2xl" shape="square"
+                image="https://primefaces.org/cdn/primeng/images/demo/avatar/walter.jpg" />
+            {{ userFullName }}
+
+            <span class="pi pi-angle-down"></span>
+
+        </button>
     </div>
 </div>
+
+<p-menu #userProfileMenu [model]="userProfileMenuItems" [popup]="true" />

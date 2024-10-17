@@ -31,7 +31,8 @@ export class AdminSidebarComponent implements OnInit {
         this._dataService.getSideNavRoutesItems().subscribe({
             next: (items: MenuItem[]) => { 
                 this.items = items;
-                this._uiService.sideBarNavItems = items;
+                this._uiService.setSideBarNavItems(items);
+                this._uiService.setActiveNavItem();
             },
             error: (err: any) => { 
                 console.log("something went worng::", err); 

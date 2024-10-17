@@ -20,6 +20,14 @@ html, body {
     flex-grow: 1;
 }
 
+.p-avatar.p-avatar-image {
+    display: flex;
+    img {
+        border-radius: 8px;
+    }
+}
+
+
 /* Class Reusability */
 
 .custom-sidebar-container {
@@ -34,3 +42,25 @@ html, body {
     }
 }
 
+.header-icon-button {
+    @include styleclass('relative flex p-3 h-full align-items-center justify-content-center cursor-pointer hover:surface-200 text-xl surface-100 border-round-2xl border-none');
+
+    .unread-stage-dot {
+        @include styleclass('text-red absolute -mt-4 -mr-4 font-bold text-4xl text-red-600')
+    }
+
+}
+
+.header-text-button {
+    @include styleclass('flex h-full gap-2 align-items-center justify-content-center cursor-pointer hover:surface-200 surface-100 border-round-2xl border-none');
+
+    .unread-stage-dot {
+        @include styleclass('text-red absolute -mt-4 -mr-4 font-bold text-4xl text-red-600')
+    }
+
+}
+
+.header-search {
+    @include styleclass('h-full surface-100 border-round-2xl border-none');
+
+}
