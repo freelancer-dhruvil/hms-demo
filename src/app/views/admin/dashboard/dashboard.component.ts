@@ -26,6 +26,8 @@ export class HospitalDashboardComponent implements OnInit {
   reportedRequests: RequestModel[];
   recentActivities: ActivityModel[];
 
+  public sideCalendarDate: Date;
+
   constructor(private hospitalService: StaticDataService) {}
 
   ngOnInit() {

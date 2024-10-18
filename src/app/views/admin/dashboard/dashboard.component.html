@@ -1,9 +1,20 @@
-<div class="flex gap-4 flex-wrap">
-    <card-stats class="flex-grow-1" [cardStats]="invoiceStats"></card-stats>
-    <card-stats class="flex-grow-1" [cardStats]="patientStats"></card-stats>
-    <card-stats class="flex-grow-1" [cardStats]="appointmentStats"></card-stats>
-    <card-stats class="flex-grow-1" [cardStats]="bedroomStats"></card-stats>
+<div class="flex gap-4">
+    <div class="flex gap-4 flex-wrap w-full">
+        <card-stats class="flex-grow-1" [cardStats]="invoiceStats"></card-stats>
+        <card-stats class="flex-grow-1" [cardStats]="patientStats"></card-stats>
+        <card-stats class="flex-grow-1" [cardStats]="appointmentStats"></card-stats>
+        <card-stats class="flex-grow-1" [cardStats]="bedroomStats"></card-stats>
+    </div>
+
+    <div class="dashboard-calendar-container">
+        <p-calendar 
+            [(ngModel)]="sideCalendarDate"
+            class="max-w-full" 
+            [inline]="true" 
+            [showWeek]="true" />
+    </div>
 </div>
+
 
 <card-bar-chart [chart]="patientOverviewByAge"></card-bar-chart>
 <card-line-chart [chart]="revenueOverview"></card-line-chart>

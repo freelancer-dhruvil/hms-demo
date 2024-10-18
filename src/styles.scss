@@ -27,6 +27,19 @@ html, body {
     }
 }
 
+.p-calendar .p-datepicker {
+    background: transparent;
+    border: none;
+
+    table td {
+        padding: 0;
+
+    }
+    .p-datepicker-header {
+        background: transparent;
+    }
+}
+
 
 /* Class Reusability */
 
@@ -97,4 +110,8 @@ html, body {
     .bottom {
         @include styleclass('text-color-secondary')
     }
+}
+
+.dashboard-calendar-container {
+    @include styleclass('surface-100 border-round-3xl')
 }

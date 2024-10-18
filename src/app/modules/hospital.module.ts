@@ -12,11 +12,14 @@ import { environment } from "../../environments/environment";
 import { HospitalRouteComponentsArray, HospitalRoutingModule } from "./hospital.routes";
 import { SharedModule } from "../components/shared.module";
 import { StaticDataService } from "../services/data.service";
+import { HospitalDashboardComponent } from "../views/admin/dashboard/dashboard.component";
+import { CalendarModule } from 'primeng/calendar';
 
 
 @NgModule({
     declarations: [
-      HospitalRouteComponentsArray
+      HospitalRouteComponentsArray,
+      HospitalDashboardComponent,
     ],
     imports: [
       CommonModule,
@@ -25,7 +28,8 @@ import { StaticDataService } from "../services/data.service";
       ApolloModule,
       HttpClientModule,
       HospitalRoutingModule,
-      SharedModule
+      SharedModule,
+      CalendarModule,
     ],
     exports: [
       HospitalRouteComponentsArray,
