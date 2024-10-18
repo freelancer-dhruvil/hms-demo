@@ -64,3 +64,37 @@ html, body {
     @include styleclass('h-full surface-100 border-round-2xl border-none');
 
 }
+
+.stat-card-dashboard {
+    background: transparent;
+    box-shadow: none;
+    @include styleclass('px-4 pb-3 pt-2 border-1 surface-border border-round-3xl');
+
+    .top {
+        @include styleclass('flex align-items-center justify-content-between');
+
+        .left {
+            @include styleclass('flex gap-2')
+        }
+    }
+
+    .middle {
+        @include styleclass('flex align-items-center justify-content-between');
+
+        .state {
+            @include styleclass('flex align-items-center p-2 border-round-xl text-sm');
+
+            &.up {
+                @include styleclass('bg-green-200');
+            }
+
+            &.down {
+                @include styleclass('bg-red-200');
+            }
+        }
+    }
+
+    .bottom {
+        @include styleclass('text-color-secondary')
+    }
+}

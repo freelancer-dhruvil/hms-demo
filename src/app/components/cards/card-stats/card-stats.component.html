@@ -1,1 +1,33 @@
-<p>Card Stats Component</p>
+@if (cardStats()) {
+    <div class="stat-card-dashboard" header="Simple Card">
+    
+        <div class="top">
+            <div class="left">
+                <i [class]="'pi ' + cardStats()?.icon"></i>
+                <span>Total Invoice</span>
+            </div>
+    
+            <div class="right">
+                <p-button (onClick)="stateAction()" icon="pi pi-ellipsis-h" [rounded]="true" [text]="true" severity="secondary"/>
+            </div>
+        </div>
+    
+        <br>
+    
+        <div class="middle">
+            <h2 class="my-2">{{ cardStats()?.value | number:'1.0':'en-US'}}</h2>
+    
+            <div [class]="'state ' + (percentage >= 0 ? 'up' : 'down')">
+                <i [class]="'pi mr-1 ' + (percentage >= 0 ? 'pi-arrow-up-right' : 'pi-arrow-down-right')" style="font-size: 0.8rem"></i> <span>{{ percentage >= 0 ? '+' : '' }}</span> <span> {{ percentage }} </span>%
+            </div>
+        </div>
+    
+        <div class="bottom">
+            <span>{{ difference | number:'1.0':'en-US' }} {{ isIncreased ? 'more' : 'less' }} than yesterday</span>
+        </div>
+    </div>
+}
+
+@else {
+    <p-skeleton width="16rem" height="8rem" borderRadius="16px" />
+}

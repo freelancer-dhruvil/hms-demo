@@ -1,16 +1,38 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, effect, input, Input, InputSignal, OnInit } from '@angular/core';
 import { CardStatsModel } from '../../../models/card.model';
 
 @Component({
-  selector: 'card-stats',
-  templateUrl: './card-stats.component.html'
+    selector: 'card-stats',
+    templateUrl: './card-stats.component.html'
 })
 export class CardStatsComponent implements OnInit {
-  @Input() cardStats!: CardStatsModel;
-  
-  constructor() {}
 
-  ngOnInit() {
-  }
+    public cardStats: InputSignal<CardStatsModel | undefined> = input<CardStatsModel>();
+    public percentage: number;
+    public difference: number;
+    public isIncreased: boolean;
+
+
+    constructor() {
+        effect(() => {
+            console.log("from component effect:", this.cardStats());
+            if (this.cardStats() !== undefined) {
+                this.difference = Math.abs(this.cardStats()!.value - this.cardStats()!.compareValue);
+                this.isIncreased = this.cardStats()!.value - this.cardStats()!.compareValue >= 0;
+                this.percentage = ((this.cardStats()!.value - this.cardStats()!.compareValue) / this.cardStats()!.compareValue * 100);
+                this.percentage = parseFloat(this.percentage.toFixed(2));
+                console.log('change:::', this.percentage);
+                
+            }
+        });
+    }
+
+    ngOnInit() {
+        console.log("from component:", this.cardStats());
+    }
+
+    public stateAction(): void {
+        console.log("state action clicked");
+    }
 }
 

@@ -1,9 +1,9 @@
-<p>Dashboard Component Works</p>
-
-<card-stats [cardStats]="invoiceStats"></card-stats>
-<card-stats [cardStats]="patientStats"></card-stats>
-<card-stats [cardStats]="appointmentStats"></card-stats>
-<card-stats [cardStats]="bedroomStats"></card-stats>
+<div class="flex gap-4 flex-wrap">
+    <card-stats class="flex-grow-1" [cardStats]="invoiceStats"></card-stats>
+    <card-stats class="flex-grow-1" [cardStats]="patientStats"></card-stats>
+    <card-stats class="flex-grow-1" [cardStats]="appointmentStats"></card-stats>
+    <card-stats class="flex-grow-1" [cardStats]="bedroomStats"></card-stats>
+</div>
 
 <card-bar-chart [chart]="patientOverviewByAge"></card-bar-chart>
 <card-line-chart [chart]="revenueOverview"></card-line-chart>

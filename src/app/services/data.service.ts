@@ -16,28 +16,28 @@ export class StaticDataService {
     //#region Card Stats
     totalInvoiceStats: CardStatsModel = {
         title: 'Total Invoice',
-        icon: '',
+        icon: 'pi-receipt',
         value: 1287,
         compareValue: 1260
     }
 
     totalPatientStats: CardStatsModel = {
         title: 'Total Patients',
-        icon: '',
+        icon: 'pi-users',
         value: 965,
         compareValue: 920
     }
 
     totalAppointmentStats: CardStatsModel = {
         title: 'Appointments',
-        icon: '',
+        icon: 'pi-calendar-plus',
         value: 128,
         compareValue: 146
     }
 
     totalBedroomStats: CardStatsModel = {
         title: 'Bedroom',
-        icon: '',
+        icon: 'pi-building',
         value: 315,
         compareValue: 259
     }

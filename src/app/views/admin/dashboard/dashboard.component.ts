@@ -79,7 +79,7 @@ export class HospitalDashboardComponent implements OnInit {
     this.hospitalService.getPatientOverviewByAgeChart(duration)
       .subscribe((data: ChartModel) => {
         this.patientOverviewByAge = data;
-        console.log(this.patientOverviewByAge);
+        // console.log(this.patientOverviewByAge);
     });
   }
 
@@ -87,7 +87,7 @@ export class HospitalDashboardComponent implements OnInit {
     this.hospitalService.getRevenueChart(duration)
       .subscribe((data: ChartModel) => {
         this.revenueOverview = data;
-        console.log(this.revenueOverview);
+        // console.log(this.revenueOverview);
     });
   }
 
@@ -95,7 +95,7 @@ export class HospitalDashboardComponent implements OnInit {
     this.hospitalService.getPatientOverviewByDeptChart(duration)
       .subscribe((data: ChartModel) => {
         this.patientOverviewByDept = data;
-        console.log(this.patientOverviewByDept);
+        // console.log(this.patientOverviewByDept);
     });
   }
 
@@ -103,7 +103,7 @@ export class HospitalDashboardComponent implements OnInit {
     this.hospitalService.getDoctorSchedules()
       .subscribe((data: ScheduleModel[]) => {
         this.doctorSchedules = data;
-        console.log(this.doctorSchedules);
+        // console.log(this.doctorSchedules);
     });
   }
 
@@ -111,7 +111,7 @@ export class HospitalDashboardComponent implements OnInit {
     this.hospitalService.getReportedRequests()
       .subscribe((data: RequestModel[]) => {
         this.reportedRequests = data;
-        console.log(this.reportedRequests);
+        // console.log(this.reportedRequests);
     });
   }
 
@@ -119,7 +119,7 @@ export class HospitalDashboardComponent implements OnInit {
     this.hospitalService.getRecentActivities()
       .subscribe((data: ActivityModel[]) => {
         this.recentActivities = data;
-        console.log(this.recentActivities);
+        // console.log(this.recentActivities);
     });
   }
 }
