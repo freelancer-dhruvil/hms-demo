@@ -40,6 +40,19 @@ html, body {
     }
 }
 
+.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr {
+    margin-bottom: 0;
+    padding: 4px;
+
+    h2 {
+        font-size: medium;
+    }
+
+    button.fc-customAddButton-button.fc-button.fc-button-primary {
+        border-radius: 8px;
+        line-height: unset;
+    }
+}
 
 /* Class Reusability */
 
@@ -113,5 +126,14 @@ html, body {
 }
 
 .dashboard-calendar-container {
-    @include styleclass('surface-100 border-round-3xl')
+    @include styleclass('surface-100 border-round-3xl p-2');
+
+    .mini-calendar {
+        @include styleclass('bg-white border-round-2xl p-2 h-30rem');
+    }
+
+    .fc-view-harness.fc-view-harness-active {
+        height: 25rem !important;
+    }
+    
 }

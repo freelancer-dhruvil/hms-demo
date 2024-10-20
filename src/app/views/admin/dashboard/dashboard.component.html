@@ -1,5 +1,5 @@
 <div class="flex gap-4">
-    <div class="flex gap-4 flex-wrap w-full">
+    <div class="flex gap-4 flex-wrap w-full h-fit">
         <card-stats class="flex-grow-1" [cardStats]="invoiceStats"></card-stats>
         <card-stats class="flex-grow-1" [cardStats]="patientStats"></card-stats>
         <card-stats class="flex-grow-1" [cardStats]="appointmentStats"></card-stats>
@@ -12,6 +12,10 @@
             class="max-w-full" 
             [inline]="true" 
             [showWeek]="true" />
+
+        <div class="mini-calendar">
+            <admin-mini-calendar></admin-mini-calendar>
+        </div>
     </div>
 </div>
 
