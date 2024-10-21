@@ -87,6 +87,7 @@ export class HospitalDashboardComponent implements OnInit {
   }
 
   getRevenueOverview(duration: 'week' | 'month' | 'year') {
+    (<any>this.revenueOverview) = undefined;
     this.hospitalService.getRevenueChart(duration)
       .subscribe((data: ChartModel) => {
         this.revenueOverview = data;
@@ -95,6 +96,7 @@ export class HospitalDashboardComponent implements OnInit {
   }
 
   getPatientOverviewByDept(duration: 'week' | 'month' | 'year') {
+    (<any>this.patientOverviewByAge) = undefined;
     this.hospitalService.getPatientOverviewByDeptChart(duration)
       .subscribe((data: ChartModel) => {
         this.patientOverviewByDept = data;

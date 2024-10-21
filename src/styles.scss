@@ -41,6 +41,10 @@ body {
     .p-datepicker-header {
         background: transparent;
     }
+
+    .p-highlight.p-datepicker-current-day {
+        @include styleclass('surface-700 text-white border-round-xl')
+    }
 }
 
 .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr {
@@ -81,7 +85,7 @@ body {
 }
 
 .header-text-button {
-    @include styleclass('flex p-2 h-full gap-2 align-items-center justify-content-center cursor-pointer hover:surface-200 surface-100 border-round-2xl border-none');
+    @include styleclass('flex p-3 h-full gap-2 align-items-center justify-content-center cursor-pointer hover:surface-200 surface-100 border-round-2xl border-none');
 
     &.primary {
         @include styleclass('surface-700 p-3 hover:surface-800 text-white');
@@ -96,6 +100,18 @@ body {
 .header-search {
     @include styleclass('h-full surface-100 border-round-2xl border-none');
 
+}
+
+
+.main-header {
+    max-width: calc(100vw - 16rem);
+    overflow: hidden;
+}
+
+.main-content {
+    max-height: 100vh;
+    max-width: calc(100vw - 16rem);
+    overflow: auto;
 }
 
 .stat-card-dashboard {
@@ -152,11 +168,21 @@ body {
         @include styleclass('flex flex-row gap-4 flex-wrap w-full h-fit just');
 
         .chart-container {
-            @include styleclass('w-full border-1 surface-border border-round-3xl');
+            @include styleclass('w-full min-w-max border-1 surface-border border-round-3xl');
 
             @media (min-width: 1250px) {
-                    width: calc(50% - 0.8rem) !important;
+                width: calc(50% - 0.8rem) !important;
+            }
+
+            &.small {
+                @media (min-width: 1250px) {
+                    width: calc(35% - 0.8rem) !important;
+                }
             }
         }
     }
+}
+
+.button-group-container {
+    @include styleclass('flex justify-content-between gap-2 p-2 surface-100 border-round-2xl');
 }

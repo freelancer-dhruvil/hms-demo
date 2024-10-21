@@ -1,1 +1,33 @@
-<p>Card Line Chart Component</p>
+@if (chart()) {
+    <div class="p-4">
+
+        <div class="flex align-items-center justify-content-between">
+
+            <div>
+                <h2 class="m-0 mb-2">
+                    {{ chart()!.title }}
+                </h2>
+
+                <span class="text-color-secondary"> {{ chart()!.description }} </span>
+
+            </div>
+
+            <div class="button-group-container">
+                @for (item of allViews; track $index) {
+                    <button class="header-text-button" [ngClass]="$index === currentViewIndex ? 'primary' : ''" (click)="viewChange($any(item.id), $index)">
+                        
+                        {{ item.label }}
+                    
+                    </button>
+                }
+            </div>
+
+
+        </div>
+
+        <p-chart type="line" [data]="data" [options]="options" />
+    </div>
+}
+@else {
+    <p-skeleton styleClass="p-2 mx-auto" width="full" height="24rem" borderRadius="16px" />
+}

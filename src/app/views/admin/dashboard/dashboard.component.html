@@ -14,9 +14,12 @@
                 <card-bar-chart [chart]="patientOverviewByAge" (viewChangeRequest)="getPatientOverviewByAge($event)"></card-bar-chart>
             </div>
             <div class="chart-container">
-                <card-line-chart [chart]="revenueOverview"></card-line-chart>
+                <card-line-chart [chart]="revenueOverview" (viewChangeRequest)="getRevenueOverview($event)"></card-line-chart>
             </div>
-            <div class="chart-container">
+        </div>
+
+        <div class="card-stat-container">
+            <div class="chart-container small">
                 <card-pie-chart [chart]="patientOverviewByDept"></card-pie-chart>
             </div>
         </div>

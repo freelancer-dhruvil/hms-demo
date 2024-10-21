@@ -1,11 +1,17 @@
 @if (chart()) {
     <div class="p-4">
 
-        <div class="flex align-items-center justify-content-between">
+        <div class="flex align-items-center justify-content-between mb-2">
 
-            <h2 class="m-0">
-                Patient Overview
-            </h2>
+            <div>
+                <h2 class="m-0 mb-2">
+                    {{ chart()!.title }}
+                </h2>
+
+                <span class="text-color-secondary"> {{ chart()!.description }} </span>
+
+            </div>
+
 
             <button class="header-text-button primary" (click)="viewChangeMenu.toggle($event)">
                 
@@ -17,8 +23,6 @@
             </button>
 
         </div>
-
-        <span class="text-color-secondary">by Age Stages</span>
 
         <p-chart type="bar" [data]="data" [options]="options" />
     </div>
