@@ -5,13 +5,14 @@
 @import 'primeflex/primeflex.scss';
 
 
-html, body {
+html,
+body {
     margin: 0;
     font-size: 14px;
 }
 
 /* Overrides */
-.p-menu .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus > .p-menuitem-content {
+.p-menu .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus>.p-menuitem-content {
     color: #4b5563;
     background: none;
 }
@@ -22,6 +23,7 @@ html, body {
 
 .p-avatar.p-avatar-image {
     display: flex;
+
     img {
         border-radius: 8px;
     }
@@ -35,6 +37,7 @@ html, body {
         padding: 0;
 
     }
+
     .p-datepicker-header {
         background: transparent;
     }
@@ -78,7 +81,11 @@ html, body {
 }
 
 .header-text-button {
-    @include styleclass('flex h-full gap-2 align-items-center justify-content-center cursor-pointer hover:surface-200 surface-100 border-round-2xl border-none');
+    @include styleclass('flex p-2 h-full gap-2 align-items-center justify-content-center cursor-pointer hover:surface-200 surface-100 border-round-2xl border-none');
+
+    &.primary {
+        @include styleclass('surface-700 p-3 hover:surface-800 text-white');
+    }
 
     .unread-stage-dot {
         @include styleclass('text-red absolute -mt-4 -mr-4 font-bold text-4xl text-red-600')
@@ -94,7 +101,7 @@ html, body {
 .stat-card-dashboard {
     background: transparent;
     box-shadow: none;
-    @include styleclass('px-4 pb-3 pt-2 border-1 surface-border border-round-3xl');
+    @include styleclass('px-4 pb-3 pt-2 border-1 surface-border border-round-3xl max-w-24rem');
 
     .top {
         @include styleclass('flex align-items-center justify-content-between');
@@ -126,7 +133,7 @@ html, body {
 }
 
 .dashboard-calendar-container {
-    @include styleclass('surface-100 border-round-3xl p-2');
+    @include styleclass('surface-100 border-round-3xl p-2 h-fit');
 
     .mini-calendar {
         @include styleclass('bg-white border-round-2xl p-2 h-30rem');
@@ -135,5 +142,21 @@ html, body {
     .fc-view-harness.fc-view-harness-active {
         height: 25rem !important;
     }
-    
+}
+
+.dashboard-left {
+
+    @include styleclass('flex flex-column gap-4 flex-grow-1');
+
+    .card-stat-container {
+        @include styleclass('flex flex-row gap-4 flex-wrap w-full h-fit just');
+
+        .chart-container {
+            @include styleclass('w-full border-1 surface-border border-round-3xl');
+
+            @media (min-width: 1250px) {
+                    width: calc(50% - 0.8rem) !important;
+            }
+        }
+    }
 }

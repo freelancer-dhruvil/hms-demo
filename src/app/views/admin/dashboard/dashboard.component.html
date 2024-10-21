@@ -1,25 +1,36 @@
-<div class="flex gap-4">
-    <div class="flex gap-4 flex-wrap w-full h-fit">
-        <card-stats class="flex-grow-1" [cardStats]="invoiceStats"></card-stats>
-        <card-stats class="flex-grow-1" [cardStats]="patientStats"></card-stats>
-        <card-stats class="flex-grow-1" [cardStats]="appointmentStats"></card-stats>
-        <card-stats class="flex-grow-1" [cardStats]="bedroomStats"></card-stats>
+<div class="flex gap-4 w-full">
+
+    <div class="dashboard-left">
+
+        <div class="card-stat-container">
+            <card-stats class="flex-grow-1" [cardStats]="invoiceStats"></card-stats>
+            <card-stats class="flex-grow-1" [cardStats]="patientStats"></card-stats>
+            <card-stats class="flex-grow-1" [cardStats]="appointmentStats"></card-stats>
+            <card-stats class="flex-grow-1" [cardStats]="bedroomStats"></card-stats>
+        </div>
+
+        <div class="card-stat-container">
+            <div class="chart-container">
+                <card-bar-chart [chart]="patientOverviewByAge" (viewChangeRequest)="getPatientOverviewByAge($event)"></card-bar-chart>
+            </div>
+            <div class="chart-container">
+                <card-line-chart [chart]="revenueOverview"></card-line-chart>
+            </div>
+            <div class="chart-container">
+                <card-pie-chart [chart]="patientOverviewByDept"></card-pie-chart>
+            </div>
+        </div>
+
     </div>
 
-    <div class="dashboard-calendar-container">
-        <p-calendar 
-            [(ngModel)]="sideCalendarDate"
-            class="max-w-full" 
-            [inline]="true" 
-            [showWeek]="true" />
+    <div class="dashboard-right">
+        <div class="dashboard-calendar-container">
+            <p-calendar [(ngModel)]="sideCalendarDate" class="max-w-full" [inline]="true" [showWeek]="true" />
 
-        <div class="mini-calendar">
-            <admin-mini-calendar></admin-mini-calendar>
+            <div class="mini-calendar">
+                <admin-mini-calendar></admin-mini-calendar>
+            </div>
         </div>
     </div>
+
 </div>
-
-
-<card-bar-chart [chart]="patientOverviewByAge"></card-bar-chart>
-<card-line-chart [chart]="revenueOverview"></card-line-chart>
-<card-pie-chart [chart]="patientOverviewByDept"></card-pie-chart>

@@ -78,6 +78,7 @@ export class HospitalDashboardComponent implements OnInit {
   }
 
   getPatientOverviewByAge(duration: 'week' | 'month' | 'year') {
+    (<any>this.patientOverviewByAge) = undefined;
     this.hospitalService.getPatientOverviewByAgeChart(duration)
       .subscribe((data: ChartModel) => {
         this.patientOverviewByAge = data;

@@ -33,7 +33,7 @@ import { BottomBannerComponent } from "./sidebars/bottom-banner/bottom-banner.co
 import { CardModule } from 'primeng/card';
 import { MiniCalendarComponent } from "./calendars/mini-calendar/mini-calendar.component";
 import { FullCalendarModule } from '@fullcalendar/angular';
-
+import { ChartModule } from 'primeng/chart';
 
 const SharedComponents: any[] = [
     // Cards
@@ -89,6 +89,7 @@ const SharedComponents: any[] = [
         ToastModule,
         CardModule,
         FullCalendarModule,
+        ChartModule,
     ],
     exports: [
        SharedComponents

@@ -15,24 +15,24 @@ export class CardStatsComponent implements OnInit {
 
     constructor() {
         effect(() => {
-            console.log("from component effect:", this.cardStats());
+            
             if (this.cardStats() !== undefined) {
                 this.difference = Math.abs(this.cardStats()!.value - this.cardStats()!.compareValue);
                 this.isIncreased = this.cardStats()!.value - this.cardStats()!.compareValue >= 0;
                 this.percentage = ((this.cardStats()!.value - this.cardStats()!.compareValue) / this.cardStats()!.compareValue * 100);
                 this.percentage = parseFloat(this.percentage.toFixed(2));
-                console.log('change:::', this.percentage);
+                
                 
             }
         });
     }
 
     ngOnInit() {
-        console.log("from component:", this.cardStats());
+        
     }
 
     public stateAction(): void {
-        console.log("state action clicked");
+        
     }
 }
 

@@ -1,0 +1,6 @@
+export enum AppColors {
+    THEME_PRIMARY = '#233955',
+    THEME_SECONDARY = '#A2F2EE',
+    THEME_TERTIARY = '#DFF8F9',
+    THEME_QUATERNARY = '#E6E6E7',
+}
