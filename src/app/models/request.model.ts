@@ -10,6 +10,7 @@ export class RequestModel {
     assignedTo?: string;        // Optional name of the person assigned to handle the request
     location?: string;          // Optional location related to the request
     notes?: string;             // Optional notes for additional information
+    icon: string;
 
     constructor(
         id: string,
@@ -19,6 +20,7 @@ export class RequestModel {
         priority: 'low' | 'medium' | 'high',
         createdDate: Date = new Date(),
         requestedBy: string,
+        icon: string,
         updatedDate?: Date,
         assignedTo?: string,
         location?: string,
@@ -35,5 +37,6 @@ export class RequestModel {
         this.assignedTo = assignedTo;
         this.location = location;
         this.notes = notes;
+        this.icon = icon;
     }
 }

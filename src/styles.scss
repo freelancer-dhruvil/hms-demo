@@ -61,6 +61,39 @@ body {
     }
 }
 
+.p-tag {
+    
+    border-radius: 20rem;
+    padding: 0.2rem 1rem;
+    font-size: small;
+    font-weight: normal;
+
+    &.p-tag-success {
+        background-color: #DFF8F9;
+        border: 2px solid #A2F2EE;
+        color: black;    
+    }
+
+    &.p-tag-danger {
+        background-color: #FFF4F4;
+        border: 2px solid #FD4245;
+        color: #FD4245;    
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Class Reusability */
 
 .custom-sidebar-container {
@@ -165,10 +198,10 @@ body {
     @include styleclass('flex flex-column gap-4 flex-grow-1');
 
     .card-stat-container {
-        @include styleclass('flex flex-row gap-4 flex-wrap w-full h-fit just');
+        @include styleclass('flex flex-row gap-4 flex-wrap w-full h-fit');
 
         .chart-container {
-            @include styleclass('w-full min-w-max border-1 surface-border border-round-3xl');
+            @include styleclass('w-full h-fit min-w-max border-1 surface-border border-round-3xl');
 
             @media (min-width: 1250px) {
                 width: calc(50% - 0.8rem) !important;
@@ -185,4 +218,11 @@ body {
 
 .button-group-container {
     @include styleclass('flex justify-content-between gap-2 p-2 surface-100 border-round-2xl');
+}
+
+.report-icon-container {
+    border-radius: 1rem;
+    color: #233955;
+    background-color: #A2F2EE;
+    padding: 1rem;
 }

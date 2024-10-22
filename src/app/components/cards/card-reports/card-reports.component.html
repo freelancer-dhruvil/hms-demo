@@ -1,0 +1,47 @@
+@if (reports()) {
+    <div class="card m-2 p-2 w-fit">
+
+        <div class="flex justify-content-between align-items-center w-full">
+            <h2 class="mb-2">
+                Report
+            </h2>
+
+            <div class="right">
+                <p-button (onClick)="cardAction()" icon="pi pi-ellipsis-h" [rounded]="true" [text]="true" severity="secondary"/>
+            </div>
+
+        </div>
+
+        <p-dataView #dv [value]="reports()">
+            <ng-template pTemplate="list" let-schedules>
+                <div class="flex flex-column gap-4 mt-2">
+                    @for (item of schedules; track $index) {
+                        <div class="flex surface-100 align-items-center justify-content-between flex-wrap p-3 gap-4 border-round-3xl">
+                            <div class="flex align-items-center justify-content-center gap-4">
+                                <div class="report-icon-container">
+                                    <i [class]="item.icon"></i>
+                                </div>
+                                <div>
+                                    <div class="text-lg font-medium text-900 mt-2 max-w-20rem white-space-nowrap overflow-hidden text-overflow-ellipsis">{{ item.description }}</div>
+                                    <span class="font-medium text-secondary text-sm">{{ timeAgo(item.updatedDate ?? item.createdDate) }}</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <i class="pi pi-arrow-right"></i>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </ng-template>
+        </p-dataView>
+    </div>
+}
+@else {
+    <div class="card m-2 p-2">
+        @for (item of [].constructor(4); track $index) {
+            <p-skeleton height="4rem" width="30rem"></p-skeleton>
+            <br>
+        }
+    </div>
+}

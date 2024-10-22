@@ -19,9 +19,19 @@
         </div>
 
         <div class="card-stat-container">
+
             <div class="chart-container small">
                 <card-pie-chart [chart]="patientOverviewByDept"></card-pie-chart>
             </div>
+
+            <div class="chart-container max-w-fit">
+                <card-doctor-schedule [schedules]="doctorSchedules"></card-doctor-schedule>
+            </div>
+
+            <div class="chart-container max-w-fit">
+                <card-reports [reports]="reportedRequests"></card-reports>
+            </div>
+
         </div>
 
     </div>

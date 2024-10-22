@@ -559,10 +559,12 @@ export class StaticDataService {
             'high', // Priority
             new Date('2024-10-01T08:30:00'), // Created Date
             'John Doe', // Requested By
+            'pi pi-hammer',
             undefined, // Updated Date
             'Alice Johnson', // Assigned To
             'Conference Room', // Location
-            'Ensure all chairs and tables are arranged properly.' // Notes
+            'Ensure all chairs and tables are arranged properly.', // Notes,,
+
         ),
         new RequestModel(
             'f4a0e87c-43c6-429b-bf1c-15e0c2b83c67', // ID
@@ -572,10 +574,12 @@ export class StaticDataService {
             'high', // Priority
             new Date('2024-10-02T09:00:00'), // Created Date
             'Jane Smith', // Requested By
+            'pi pi-hammer',
             new Date('2024-10-05T17:00:00'), // Updated Date
             'Bob Brown', // Assigned To
             'Server Room', // Location
-            'The AC has been malfunctioning for a week.' // Notes
+            'The AC has been malfunctioning for a week.', // Notes,
+
         ),
         new RequestModel(
             'd46f02e4-78ae-4623-a0a8-91d7882e1f90', // ID
@@ -585,10 +589,12 @@ export class StaticDataService {
             'medium', // Priority
             new Date('2024-10-03T10:15:00'), // Created Date
             'Emily Clark', // Requested By
+            'pi pi-hammer',
             undefined, // Updated Date
             'Charlie Davis', // Assigned To
             'Main Office', // Location
-            'Ensure to check the stock levels before ordering.' // Notes
+            'Ensure to check the stock levels before ordering.', // Notes,
+
         ),
         new RequestModel(
             'f6e7e35e-12e3-4a44-b02b-f9c3ebcfd6d7', // ID
@@ -598,10 +604,12 @@ export class StaticDataService {
             'high', // Priority
             new Date('2024-10-04T11:00:00'), // Created Date
             'Michael Wilson', // Requested By
+            'pi pi-hammer',
             new Date('2024-10-10T14:30:00'), // Updated Date
             'Diana Green', // Assigned To
             'Staff Lounge', // Location
-            'The window was shattered during the storm.' // Notes
+            'The window was shattered during the storm.', // Notes,
+
         ),
         new RequestModel(
             '9e37129f-6e51-4b64-8c93-489af4f3bb2d', // ID
@@ -611,10 +619,12 @@ export class StaticDataService {
             'low', // Priority
             new Date('2024-10-05T09:30:00'), // Created Date
             'Sarah Lewis', // Requested By
+            'pi pi-hammer',
             undefined, // Updated Date
             'Eva White', // Assigned To
             'Restrooms', // Location
-            'Routine maintenance request.' // Notes
+            'Routine maintenance request.', // Notes,
+
         )
     ];
 
@@ -871,7 +881,7 @@ export class StaticDataService {
                     break;
             }
             subject.complete();
-        }, 2000);
+        }, 1000);
 
         return subject.asObservable();
     }
@@ -918,7 +928,7 @@ export class StaticDataService {
         setTimeout(() => {
             subject.next(this.doctorSchedules);
             subject.complete();
-        }, 2000);
+        }, 1000);
 
         return subject.asObservable();
     }

@@ -34,6 +34,10 @@ import { CardModule } from 'primeng/card';
 import { MiniCalendarComponent } from "./calendars/mini-calendar/mini-calendar.component";
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { ChartModule } from 'primeng/chart';
+import { CardDoctorScheduleComponent } from './cards/card-doctor-schedule/card-doctor-schedule.component';
+import { DataViewModule } from 'primeng/dataview';
+import { TagModule } from 'primeng/tag';
+import { CardReprotsComponent } from './cards/card-reports/card-reports.component';
 
 const SharedComponents: any[] = [
     // Cards
@@ -42,6 +46,8 @@ const SharedComponents: any[] = [
     CardPieChartComponent,
     CardSettingsComponent,
     CardStatsComponent,
+    CardDoctorScheduleComponent,
+    CardReprotsComponent,
     MiniCalendarComponent,
 
     // Dropdowns
@@ -63,7 +69,7 @@ const SharedComponents: any[] = [
 
 @NgModule({
     declarations: [
-        SharedComponents
+        SharedComponents,
     ],
     imports: [
         CommonModule,
@@ -90,6 +96,8 @@ const SharedComponents: any[] = [
         CardModule,
         FullCalendarModule,
         ChartModule,
+        DataViewModule,
+        TagModule,
     ],
     exports: [
        SharedComponents
