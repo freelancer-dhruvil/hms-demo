@@ -121,6 +121,7 @@ export class HospitalDashboardComponent implements OnInit {
   }
 
   getRecentActivities() {
+    (<any>this.recentActivities) = undefined;
     this.hospitalService.getRecentActivities()
       .subscribe((data: ActivityModel[]) => {
         this.recentActivities = data;

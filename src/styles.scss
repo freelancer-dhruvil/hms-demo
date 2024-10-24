@@ -181,15 +181,20 @@ body {
     }
 }
 
-.dashboard-calendar-container {
-    @include styleclass('surface-100 border-round-3xl p-2 h-fit');
+.dashboard-right {
 
-    .mini-calendar {
-        @include styleclass('bg-white border-round-2xl p-2 h-30rem');
-    }
+    @include styleclass('flex flex-column gap-4');
 
-    .fc-view-harness.fc-view-harness-active {
-        height: 25rem !important;
+    .dashboard-calendar-container {
+        @include styleclass('surface-100 border-round-3xl p-2 h-fit');
+    
+        .mini-calendar {
+            @include styleclass('bg-white border-round-2xl p-2 h-30rem');
+        }
+    
+        .fc-view-harness.fc-view-harness-active {
+            height: 25rem !important;
+        }
     }
 }
 
@@ -201,7 +206,7 @@ body {
         @include styleclass('flex flex-row gap-4 flex-wrap w-full h-fit');
 
         .chart-container {
-            @include styleclass('w-full h-fit min-w-max border-1 surface-border border-round-3xl');
+            @include styleclass('general-card');
 
             @media (min-width: 1250px) {
                 width: calc(50% - 0.8rem) !important;
@@ -225,4 +230,17 @@ body {
     color: #233955;
     background-color: #A2F2EE;
     padding: 1rem;
+}
+
+.general-card {
+    @include styleclass('w-full h-fit min-w-max border-1 surface-border border-round-3xl');
+}
+
+.overflow-text-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

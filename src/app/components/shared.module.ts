@@ -38,6 +38,7 @@ import { CardDoctorScheduleComponent } from './cards/card-doctor-schedule/card-d
 import { DataViewModule } from 'primeng/dataview';
 import { TagModule } from 'primeng/tag';
 import { CardReprotsComponent } from './cards/card-reports/card-reports.component';
+import { CardRecentActivityComponent } from './cards/card-recent-activity/card-recent-activity.component';
 
 const SharedComponents: any[] = [
     // Cards
@@ -49,6 +50,7 @@ const SharedComponents: any[] = [
     CardDoctorScheduleComponent,
     CardReprotsComponent,
     MiniCalendarComponent,
+    CardRecentActivityComponent,
 
     // Dropdowns
     UserDropdownComponent,

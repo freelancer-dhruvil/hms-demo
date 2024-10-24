@@ -5,6 +5,7 @@ export class ActivityModel {
     timestamp: Date; // Date and time of the activity
     status: string; // Current status of the activity (e.g., completed, pending)
     details?: string; // Optional additional details about the activity
+    icon: string;
 
     constructor(
         id: string,
@@ -12,6 +13,7 @@ export class ActivityModel {
         action: string,
         timestamp: Date = new Date(),
         status: string = 'pending',
+        icon: string,
         details?: string
     ) {
         this.id = id;
@@ -19,6 +21,7 @@ export class ActivityModel {
         this.action = action;
         this.timestamp = timestamp;
         this.status = status;
+        this.icon = icon;
         this.details = details;
     }
 }

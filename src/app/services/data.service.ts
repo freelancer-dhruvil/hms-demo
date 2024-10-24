@@ -636,6 +636,8 @@ export class StaticDataService {
             'Logged in', // Action
             new Date('2024-10-11T08:15:30'), // Timestamp
             'completed', // Status
+            'pi pi-hammer',
+
             'User logged in successfully from web.'
         ),
         new ActivityModel(
@@ -644,7 +646,9 @@ export class StaticDataService {
             'Updated profile', // Action
             new Date('2024-10-11T09:05:45'), // Timestamp
             'completed', // Status
-            'User updated their email address and phone number.'
+            'pi pi-hammer',
+
+            'User updated their email address and phone number. User updated their email address and phone number.'
         ),
         new ActivityModel(
             'b1d3e92f-df4b-4a3b-bf7b-9b7aa9932f9b', // Unique ID
@@ -652,6 +656,8 @@ export class StaticDataService {
             'Changed password', // Action
             new Date('2024-10-11T10:00:00'), // Timestamp
             'completed', // Status
+            'pi pi-hammer',
+
             'User successfully changed their password.'
         ),
         new ActivityModel(
@@ -660,6 +666,8 @@ export class StaticDataService {
             'Created a new document', // Action
             new Date('2024-10-11T10:30:00'), // Timestamp
             'completed', // Status
+            'pi pi-hammer',
+
             'User created a new document titled "Project Plan".'
         ),
         new ActivityModel(
@@ -668,6 +676,8 @@ export class StaticDataService {
             'Logged out', // Action
             new Date('2024-10-11T11:00:15'), // Timestamp
             'completed', // Status
+            'pi pi-hammer',
+
             'User logged out successfully.'
         )
     ];

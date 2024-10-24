@@ -1,0 +1,43 @@
+@if (activities()) {
+    <div class="card p-4">
+
+        <div class="flex justify-content-between align-items-center w-full gap-4">
+            <h2 class="m-0">
+                Recent Activity
+            </h2>
+
+            <div class="right">
+                <p-button (onClick)="cardAction()" icon="pi pi-ellipsis-h" [rounded]="true" [text]="true" severity="secondary"/>
+            </div>
+
+        </div>
+
+        <p-dataView #dv [value]="activities()">
+            <ng-template pTemplate="list" let-activities>
+                <div class="flex flex-column mt-2">
+                    @for (item of activities; track $index) {
+                        <div class="flex align-items-center justify-content-between flex-wrap surface-100 py-2 gap-2">
+                            <div class="flex align-items-center justify-content-center gap-4">
+                                <div class="report-icon-container border-circle">
+                                    <i [class]="item.icon"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-900 my-2 max-w-12rem overflow-text-2">{{ item.details }}</div>
+                                    <span class="font-medium text-secondary text-sm"> {{ formatDateToAMPM(item.timestamp) }} </span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </ng-template>
+        </p-dataView>
+    </div>
+}
+@else {
+    <div class="card m-2 p-2">
+        @for (item of [].constructor(4); track $index) {
+            <p-skeleton height="4rem" width="18rem"></p-skeleton>
+            <br>
+        }
+    </div>
+}

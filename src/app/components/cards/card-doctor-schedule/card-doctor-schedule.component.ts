@@ -13,7 +13,6 @@ export class CardDoctorScheduleComponent implements OnInit {
 
     constructor() {
         effect(() => {
-            console.log('schedule:::', this.schedules());
         })
     }
 
