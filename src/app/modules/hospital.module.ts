@@ -14,12 +14,14 @@ import { SharedModule } from "../components/shared.module";
 import { StaticDataService } from "../services/data.service";
 import { HospitalDashboardComponent } from "../views/admin/dashboard/dashboard.component";
 import { CalendarModule } from 'primeng/calendar';
+import { HospitalAppointmentComponent } from "../views/admin/appointments/appointment.component";
 
 
 @NgModule({
     declarations: [
       HospitalRouteComponentsArray,
       HospitalDashboardComponent,
+      HospitalAppointmentComponent,
     ],
     imports: [
       CommonModule,

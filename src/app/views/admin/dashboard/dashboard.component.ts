@@ -25,6 +25,7 @@ export class HospitalDashboardComponent implements OnInit {
   doctorSchedules: ScheduleModel[];
   reportedRequests: RequestModel[];
   recentActivities: ActivityModel[];
+  patientAppointmentOverview: any[] = ['data1', 'data2', 'to be added with the component Implementation'];
 
   public sideCalendarDate: Date;
 

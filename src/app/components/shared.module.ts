@@ -1,4 +1,4 @@
-import { NgModule} from "@angular/core";
+import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { CardBarChartComponent } from "./cards/card-bar-chart/card-bar-chart.component";
@@ -69,6 +69,33 @@ const SharedComponents: any[] = [
     // Maps
 ];
 
+const SharedModules: any[] = [
+    ToolbarModule,
+    ButtonModule,
+    SplitButtonModule,
+    InputTextModule,
+    ImageModule,
+    OverlayPanelModule,
+    MenuModule,
+    TableModule,
+    TooltipModule,
+    IconFieldModule,
+    InputIconModule,
+    BreadcrumbModule,
+    InputSwitchModule,
+    FormsModule,
+    BadgeModule,
+    AvatarModule,
+    AvatarGroupModule,
+    SkeletonModule,
+    ToastModule,
+    CardModule,
+    FullCalendarModule,
+    ChartModule,
+    DataViewModule,
+    TagModule,
+]
+
 @NgModule({
     declarations: [
         SharedComponents,
@@ -76,35 +103,13 @@ const SharedComponents: any[] = [
     imports: [
         CommonModule,
         RouterModule,
-        ToolbarModule, 
-        ButtonModule, 
-        SplitButtonModule, 
-        InputTextModule,
-        ImageModule,
-        OverlayPanelModule,
-        MenuModule,
-        TableModule,
-        TooltipModule,
-        IconFieldModule,
-        InputIconModule,
-        BreadcrumbModule,
-        InputSwitchModule,
-        FormsModule,
-        BadgeModule,
-        AvatarModule,
-        AvatarGroupModule,
-        SkeletonModule,
-        ToastModule,
-        CardModule,
-        FullCalendarModule,
-        ChartModule,
-        DataViewModule,
-        TagModule,
+        SharedModules,
     ],
     exports: [
-       SharedComponents
+        SharedComponents,
+        SharedModules,
     ],
     providers: []
 })
 
-export class SharedModule {}
+export class SharedModule { }

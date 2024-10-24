@@ -183,7 +183,7 @@ body {
 
 .dashboard-right {
 
-    @include styleclass('flex flex-column gap-4');
+    @include styleclass('flex flex-column gap-4 h-fit');
 
     .dashboard-calendar-container {
         @include styleclass('surface-100 border-round-3xl p-2 h-fit');
@@ -243,4 +243,24 @@ body {
     line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.footer-container {
+    @include styleclass('text-color-secondary px-4 py-3 flex gap-4');
+
+    .text-container {
+        @include styleclass('font-bold')
+    }
+
+    .links-container {
+        @include styleclass('flex gap-3 flex-grow-1');
+
+        a {
+            @include styleclass('text-300 no-underline')
+        }
+    }
+
+    .icons-container {
+        @include styleclass('flex gap-3');
+    }
 }

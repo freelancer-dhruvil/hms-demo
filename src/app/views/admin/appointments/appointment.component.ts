@@ -1,13 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, input, InputSignal, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-hospital-appointment',
-  templateUrl: './appointment.component.html',
-  styleUrl: "./appointment.component.scss"
+    selector: 'admin-hospital-appointment',
+    templateUrl: './appointment.component.html',
+    styleUrl: "./appointment.component.scss"
 })
 export class HospitalAppointmentComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit() {}
+    appointments = input();
+    currentView: InputSignal<"mini-view" | "full-view"> = input<"mini-view" | "full-view">("mini-view");
+
+    constructor() { }
+
+    ngOnInit() { }
 }
 
