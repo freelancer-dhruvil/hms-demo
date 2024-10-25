@@ -5,6 +5,7 @@ import { ChartModel } from '../../../models/chart.model';
 import { ScheduleModel } from '../../../models/schedule.model';
 import { RequestModel } from '../../../models/request.model';
 import { ActivityModel } from '../../../models/activity.model';
+import { AppointmentModel } from '../../../models/appointment.model';
 
 @Component({
   selector: 'app-hospital-dashboard',
@@ -25,6 +26,8 @@ export class HospitalDashboardComponent implements OnInit {
   doctorSchedules: ScheduleModel[];
   reportedRequests: RequestModel[];
   recentActivities: ActivityModel[];
+  appointmentsList: AppointmentModel[];
+
   patientAppointmentOverview: any[] = ['data1', 'data2', 'to be added with the component Implementation'];
 
   public sideCalendarDate: Date;
@@ -44,6 +47,9 @@ export class HospitalDashboardComponent implements OnInit {
     this.getDoctorSchedules();
     this.getReportedRequests();
     this.getRecentActivities();
+
+    const today = new Date();
+    this.getAppointmentsList(today);
   }
 
   getTotalInvoiceStats() {
@@ -127,6 +133,17 @@ export class HospitalDashboardComponent implements OnInit {
       .subscribe((data: ActivityModel[]) => {
         this.recentActivities = data;
         // console.log(this.recentActivities);
+    });
+  }
+
+  getAppointmentsList(date: Date) { // date to be passed for which appointments need to be fetched
+    const startOfDay = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0, 0);
+    const endOfDay = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59, 999);
+    
+    this.hospitalService.getAppointmentsList(startOfDay, endOfDay)
+      .subscribe((data: AppointmentModel[]) => {
+        this.appointmentsList = data;
+        console.log(this.appointmentsList);
     });
   }
 }
