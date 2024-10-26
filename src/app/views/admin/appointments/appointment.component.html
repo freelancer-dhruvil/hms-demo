@@ -13,6 +13,18 @@
     
             </div>
 
+            <div class="date-ribbon">
+                <p-button icon="flex-grow-1 item arrow pi pi-angle-left" (onClick)="goToPrevious()" [rounded]="true" [text]="true" severity="secondary" />
+                    @for (date of dates; track $index) {
+                        <div (click)="updateCurrent(date)" class="flex flex-grow-1 item flex-column align-items-center justify-content-center gap-2" [ngClass]="{ 'active': date.dayNum == todayDate && date.monthNum == todayMonth }">
+                            <span class="text-color-secondary text-sm">{{ date.dayName }}</span>
+                            <span class="text-lg">{{ date.dayNum }}</span>
+                        </div>
+                    }
+                <p-button icon="flex-grow-1 item arrow pi pi-angle-right" (onClick)="goToNext()" [rounded]="true" [text]="true" severity="secondary" />
+            </div>
+              
+
             <div>
                 {{ appointments() | json }}
             </div>

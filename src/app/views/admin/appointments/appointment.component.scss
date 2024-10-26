@@ -1,0 +1,16 @@
+.date-ribbon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dates span {
+    margin: 0 10px;
+}
