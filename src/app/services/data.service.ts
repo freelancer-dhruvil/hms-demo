@@ -834,18 +834,18 @@ export class StaticDataService {
 
     // Appointments List
     appointmentsList: AppointmentModel[] = [
-        new AppointmentModel('','','','Caren Simpson','caren.simpson@demo.com','','Petra Winsburry','petra.winsburry@demo.com',new Date('2024-10-11T08:15:30'),new Date('2024-10-11T08:45:30'),'Viral Fever','', '', 'Confirmed'),
-        new AppointmentModel('','','','James Smith','james.smith@demo.com','','Amanda Blake','amanda.blake@demo.com',new Date('2024-10-11T09:00:00'),new Date('2024-10-11T09:30:00'),'Back Pain','', '', 'Pending'),
-        new AppointmentModel('','','','Anna Brown','anna.brown@demo.com','','David Johns','david.johns@demo.com',new Date('2024-10-11T09:45:00'),new Date('2024-10-11T10:15:00'),'Migraine','', '', 'Confirmed'),
-        new AppointmentModel('','','','Mark Wilson','mark.wilson@demo.com','','Sarah Knight','sarah.knight@demo.com',new Date('2024-10-11T10:30:00'),new Date('2024-10-11T11:00:00'),'Routine Checkup','', '', 'Rescheduled'),
-        new AppointmentModel('','','','Emily Turner','emily.turner@demo.com','','Michael Evans','michael.evans@demo.com',new Date('2024-10-11T11:15:00'),new Date('2024-10-11T11:45:00'),'Allergy Testing','', '', 'Confirmed'),
-        new AppointmentModel('','','','Sophia Lee','sophia.lee@demo.com','','Brian Cooper','brian.cooper@demo.com',new Date('2024-10-11T12:00:00'),new Date('2024-10-11T12:30:00'),'Flu Symptoms','', '', 'Pending'),
-        new AppointmentModel('','','','Liam Green','liam.green@demo.com','','Olivia Adams','olivia.adams@demo.com',new Date('2024-10-11T13:00:00'),new Date('2024-10-11T13:30:00'),'Physical Therapy','', '', 'Confirmed'),
-        new AppointmentModel('','','','Mia Allen','mia.allen@demo.com','','Ethan Fox','ethan.fox@demo.com',new Date('2024-10-11T13:45:00'),new Date('2024-10-11T14:15:00'),'Dermatology Consultation','', '', 'Rescheduled'),
-        new AppointmentModel('','','','Noah White','noah.white@demo.com','','Charlotte King','charlotte.king@demo.com',new Date('2024-10-11T14:30:00'),new Date('2024-10-11T15:00:00'),'Eye Checkup','', '', 'Confirmed'),
-        new AppointmentModel('','','','Ella Scott','ella.scott@demo.com','','Benjamin Gray','benjamin.gray@demo.com',new Date('2024-10-11T15:15:00'),new Date('2024-10-11T15:45:00'),'Orthopedic Consultation','', '', 'Pending'),
-        new AppointmentModel('','','','Oliver Brown','oliver.brown@demo.com','','Isabella Harris','isabella.harris@demo.com',new Date('2024-10-11T16:00:00'),new Date('2024-10-11T16:30:00'),'Nutrition Counseling','', '', 'Confirmed'),
-        new AppointmentModel('','','','Grace Miller','grace.miller@demo.com','','Lucas Wright','lucas.wright@demo.com',new Date('2024-10-11T16:45:00'),new Date('2024-10-11T17:15:00'),'Follow-up Visit','', '', 'Rescheduled')
+        new AppointmentModel('1','','','Caren Simpson','caren.simpson@demo.com','','Petra Winsburry','petra.winsburry@demo.com',new Date('2024-10-11T08:15:30'),new Date('2024-10-11T08:45:30'),'Viral Fever','', '', 'Confirmed'),
+        new AppointmentModel('2','','','James Smith','james.smith@demo.com','','Amanda Blake','amanda.blake@demo.com',new Date('2024-10-11T09:00:00'),new Date('2024-10-11T09:30:00'),'Back Pain','', '', 'Pending'),
+        new AppointmentModel('3','','','Anna Brown','anna.brown@demo.com','','David Johns','david.johns@demo.com',new Date('2024-10-11T09:45:00'),new Date('2024-10-11T10:15:00'),'Migraine','', '', 'Cancelled'),
+        new AppointmentModel('4','','','Mark Wilson','mark.wilson@demo.com','','Sarah Knight','sarah.knight@demo.com',new Date('2024-10-11T10:30:00'),new Date('2024-10-11T11:00:00'),'Routine Checkup','', '', 'Rescheduled'),
+        new AppointmentModel('5','','','Emily Turner','emily.turner@demo.com','','Michael Evans','michael.evans@demo.com',new Date('2024-10-11T11:15:00'),new Date('2024-10-11T11:45:00'),'Allergy Testing','', '', 'Confirmed'),
+        new AppointmentModel('6','','','Sophia Lee','sophia.lee@demo.com','','Brian Cooper','brian.cooper@demo.com',new Date('2024-10-11T12:00:00'),new Date('2024-10-11T12:30:00'),'Flu Symptoms','', '', 'Pending'),
+        new AppointmentModel('7','','','Liam Green','liam.green@demo.com','','Olivia Adams','olivia.adams@demo.com',new Date('2024-10-11T13:00:00'),new Date('2024-10-11T13:30:00'),'Physical Therapy','', '', 'Confirmed'),
+        new AppointmentModel('8','','','Mia Allen','mia.allen@demo.com','','Ethan Fox','ethan.fox@demo.com',new Date('2024-10-11T13:45:00'),new Date('2024-10-11T14:15:00'),'Dermatology Consultation','', '', 'Rescheduled'),
+        new AppointmentModel('9','','','Noah White','noah.white@demo.com','','Charlotte King','charlotte.king@demo.com',new Date('2024-10-11T14:30:00'),new Date('2024-10-11T15:00:00'),'Eye Checkup','', '', 'Confirmed'),
+        new AppointmentModel('10','','','Ella Scott','ella.scott@demo.com','','Benjamin Gray','benjamin.gray@demo.com',new Date('2024-10-11T15:15:00'),new Date('2024-10-11T15:45:00'),'Orthopedic Consultation','', '', 'Pending'),
+        new AppointmentModel('11','','','Oliver Brown','oliver.brown@demo.com','','Isabella Harris','isabella.harris@demo.com',new Date('2024-10-11T16:00:00'),new Date('2024-10-11T16:30:00'),'Nutrition Counseling','', '', 'Confirmed'),
+        new AppointmentModel('12','','','Grace Miller','grace.miller@demo.com','','Lucas Wright','lucas.wright@demo.com',new Date('2024-10-11T16:45:00'),new Date('2024-10-11T17:15:00'),'Follow-up Visit','', '', 'Rescheduled')
     ];
 
     constructor() {
@@ -1000,9 +1000,9 @@ export class StaticDataService {
         console.log(endDateTime.toISOString());
 
         setTimeout(() => {
-            subject.next(this.appointmentsList);
+            subject.next(structuredClone(this.appointmentsList));
             subject.complete();
-        }, 2000);
+        }, 500);
 
         return subject.asObservable();
     }

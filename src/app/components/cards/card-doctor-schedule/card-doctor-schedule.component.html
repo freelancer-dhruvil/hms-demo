@@ -27,7 +27,7 @@
                                 </div>
                             </div>
                             <div class="flex flex-column align-items-end gap-2">
-                                <p-tag [value]="item.availableSlots.length > 0 ? 'Available' : 'Unavailable'" [severity]="getSeverity(item)" class="" />
+                                <p-tag [classList]="'lite'" [value]="item.availableSlots.length > 0 ? 'Available' : 'Unavailable'" [severity]="getSeverity(item)" class="" />
                                 @if (item.availableSlots.length > 0) {
                                     <div>
                                         {{ getFirstAvailableSlot(item.availableSlots) }}

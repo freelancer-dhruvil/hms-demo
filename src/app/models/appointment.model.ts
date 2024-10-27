@@ -11,8 +11,8 @@ export class AppointmentModel {
     doctorName: string;
     doctorEmailId: string;
 
-    startDateTime: Date;
-    endDateTime: Date;
+    startDateTime: Date | string;
+    endDateTime: Date | string;
 
     treatment: string;
     notes: string;

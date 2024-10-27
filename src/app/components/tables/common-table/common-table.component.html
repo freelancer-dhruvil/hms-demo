@@ -1,0 +1,111 @@
+<div class="card listing-container">
+    <p-table 
+        [columns]="cols()" 
+        [value]="data()" 
+        [tableStyle]="{ 'min-width': '50rem' }"
+        [scrollable]="true" 
+        [resizableColumns]="true"
+        [paginator]="!isMini()"
+        [rows]="rows"
+        [first]="first"
+        [dataKey]="dataKey()"
+        [selectionMode]="selectionMethod()"
+        currentPageReportTemplate=""
+        (onPage)="pageChange($event)"
+        [globalFilterFields]="allSearchFields"
+        [rowsPerPageOptions]="[10, 25, 50, 100]"
+        [showCurrentPageReport]="true"
+        [(selection)]="selectedItems"
+        (onRowSelect)="selectionChange($event)" 
+        (onRowUnselect)="selectionChange($event)"
+        (onHeaderCheckboxToggle)="selectionChange($event)"
+        [scrollHeight]="isMini() ? '30rem' : ''"
+        dataKey="code"
+        #commonTable>
+
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                @for (col of columns; track $index) {
+                    @if (col.isColumnVisible) {
+
+                        @if (col.colType === columnTypes.CHECKBOX) {
+                            <th><p-tableHeaderCheckbox /></th>
+                        }
+
+                        @else {
+                            <th class="text-overflow-ellipsis"
+                                [pTooltip]="col.columnHeader" 
+                                showDelay="500"
+                                pResizableColumn
+                                [pSortableColumn]="col.isSortable ? col.sortFieldName ?? col.fieldName : ''"
+                                >
+                                {{ col.columnHeader }}
+    
+                                @if (col.isSortable) {
+                                    <p-sortIcon [field]="col.sortFieldName ?? col.fieldName" />
+                                }
+                            </th>
+                        }
+                    }
+                }
+            </tr>
+        </ng-template>
+        
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr [pSelectableRow]="rowData">
+                @for (col of columns; track $index) {
+                    @if(col.isColumnVisible) {
+
+                        @switch (col.colType) {
+
+                            @case (columnTypes.TOGGLE) {
+                                <td>
+                                    <p-inputSwitch 
+                                        [(ngModel)]="rowData[col.fieldName]" 
+                                        (onChange)="bindingFunctionCall(col.cellInlineChangeFunction, col, rowData, $event)"
+                                        />
+                                </td>
+                            }
+
+                            @case (columnTypes.CHECKBOX) {
+                                <td>
+                                    <p-tableCheckbox [pSelectableRow]="rowData" [value]="rowData" />
+                                </td>
+                            }
+
+                            
+                            @case (columnTypes.BADGE_TAG) {
+                                <td>
+                                    <p-tag [classList]="'solid'" [value]="rowData[col.fieldName]" [severity]="rowData[col.servityFieldName]" class="" />
+                                </td>
+                            }
+
+                            @case (columnTypes.CUSTOM) {
+                                <td>
+                                    <ng-container [ngTemplateOutlet]="rowData[col.fieldName]" [ngTemplateOutletContext]="{ item: rowData }"></ng-container>
+                                </td>
+                            }
+
+                            @default {
+                                <td class="text-overflow-ellipsis"
+                                    [pTooltip]="col.isTooltipVisible ? col.tooltipFieldName ? rowData[col.tooltipFieldName] : rowData[col.fieldName] : ''"
+                                    showDelay="500">
+                                    <span>
+                                        {{ rowData[col.fieldName] }}
+                                    </span>
+                                </td>
+                            }
+
+                        }
+                    }
+                }
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="paginatorleft">
+            <span class="font-italic text-sm">
+                Showing {{ first+1 }} to {{ first + (rows < data().length ? rows : data().length) }} of {{ data().length }}
+            </span>
+        </ng-template>
+    </p-table>
+</div>

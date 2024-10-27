@@ -28,8 +28,6 @@ export class HospitalDashboardComponent implements OnInit {
   recentActivities: ActivityModel[];
   appointmentsList: AppointmentModel[];
 
-  patientAppointmentOverview: any[] = ['data1', 'data2', 'to be added with the component Implementation'];
-
   public sideCalendarDate: Date;
 
   constructor(private hospitalService: StaticDataService) {}

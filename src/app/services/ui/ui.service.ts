@@ -44,6 +44,22 @@ export class UiService {
         this._sidebarNavItems$.next(items);
     }
 
+    public formatDateToAMPM(date: Date): string {
+        console.log(date);
+        
+        let hours: number = date.getHours();
+        const minutes: number = date.getMinutes();
+
+        const ampm: string = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+
+        const minutesString: string = minutes < 10 ? '0' + minutes : minutes.toString();
+
+        return `${hours}:${minutesString} ${ampm}`;
+    }
+
+
     private _registerRouteChangeListerner(): void {
         this._router.events.pipe(
             filter(event => event instanceof NavigationEnd) // Only handle NavigationEnd events

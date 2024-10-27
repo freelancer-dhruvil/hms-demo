@@ -1,5 +1,6 @@
 import { Component, effect, input, InputSignal, OnInit } from '@angular/core';
 import { ActivityModel } from '../../../models/activity.model';
+import { UiService } from '../../../services/ui/ui.service';
 
 @Component({
     selector: 'card-recent-activity',
@@ -11,7 +12,9 @@ export class CardRecentActivityComponent implements OnInit {
     public activities: InputSignal<ActivityModel[]> = input<ActivityModel[]>([]);
     public latestAvailableSlot: any;
 
-    constructor() {
+    constructor(
+        private readonly _uiService: UiService,
+    ) {
         effect(() => {
             console.log('activity:::', this.activities());
         })
@@ -23,16 +26,7 @@ export class CardRecentActivityComponent implements OnInit {
 
 
     public formatDateToAMPM(date: Date): string {
-        let hours: number = date.getHours();
-        const minutes: number = date.getMinutes();
-
-        const ampm: string = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12;
-        hours = hours ? hours : 12;
-
-        const minutesString: string = minutes < 10 ? '0' + minutes : minutes.toString();
-
-        return `${hours}:${minutesString} ${ampm}`;
+        return this._uiService.formatDateToAMPM(date);
     }
 
     public cardAction() {

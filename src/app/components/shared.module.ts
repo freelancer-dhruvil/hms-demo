@@ -39,6 +39,7 @@ import { DataViewModule } from 'primeng/dataview';
 import { TagModule } from 'primeng/tag';
 import { CardReprotsComponent } from './cards/card-reports/card-reports.component';
 import { CardRecentActivityComponent } from './cards/card-recent-activity/card-recent-activity.component';
+import { CommonTableComponent } from './tables/common-table/common-table.component';
 
 const SharedComponents: any[] = [
     // Cards
@@ -67,6 +68,9 @@ const SharedComponents: any[] = [
     AdminSidebarComponent,
     BottomBannerComponent,
     // Maps
+
+    CommonTableComponent,
+
 ];
 
 const SharedModules: any[] = [

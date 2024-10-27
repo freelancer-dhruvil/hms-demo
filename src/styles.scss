@@ -61,33 +61,104 @@ body {
     }
 }
 
-.p-tag {
+p-tag {
 
-    border-radius: 20rem;
-    padding: 0.2rem 1rem;
-    font-size: small;
-    font-weight: normal;
+    &.lite {
 
-    &.p-tag-success {
-        background-color: #DFF8F9;
-        border: 2px solid #A2F2EE;
-        color: black;
+        .p-tag {
+            border-radius: 20rem;
+            padding: 0.2rem 1rem;
+            font-size: small;
+            font-weight: normal;
+    
+            &.p-tag-success {
+                background-color: #DFF8F9;
+                border: 2px solid #A2F2EE;
+                color: black;
+            }
+    
+            &.p-tag-danger {
+                background-color: #FFF4F4;
+                border: 2px solid #FD4245;
+                color: #FD4245;
+            }
+        }
+
     }
 
-    &.p-tag-danger {
-        background-color: #FFF4F4;
-        border: 2px solid #FD4245;
-        color: #FD4245;
+    &.solid {
+        .p-tag {
+
+            color: black;
+            border: none;
+            font-weight: normal;
+
+            &.p-tag-success {
+                background-color: #A2F2EE;
+            }
+            &.p-tag-danger {
+                background-color: #FFE1E1;
+            }
+            &.p-tag-warning {
+                background-color: #f9eedf;
+            }
+    
+            &.p-tag-secondary {
+                background-color: #C3C4C4;
+            }
+        }
     }
 }
 
+.p-datatable-header {
+    background-color: transparent;
+    border: none;
+}
+
+.p-checkbox.p-component {
+
+    border-radius: 4px;
+
+    svg {
+        height: 12px;
+        width: 12px;
+
+        path {
+            color: #A2F2EE;
+        }
+    }
+
+    .p-checkbox-box.p-highlight {
+        border-color: #233955;
+        background: #233955;
+    }
+}
+
+.p-datatable .p-datatable-tbody>tr.p-highlight {
+    background: #DFF8F966;
+    color: black;
+}
 
 
+.p-paginator .p-paginator-pages .p-paginator-page {
 
+    border-radius: 12px;
+    background-color: #F0F0F0;
 
+    &.p-highlight {
+        background: #233955;
+        border-color: #233955;
+        color: white;
+    }
+}
 
-
-
+.p-paginator .p-paginator-first,
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next,
+.p-paginator .p-paginator-last {
+    border-radius: 12px;
+    background-color: #F0F0F0;
+}
 
 
 

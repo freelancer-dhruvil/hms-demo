@@ -1,7 +1,7 @@
-@if (appointments()) {
+@if (appointmentsData) {
 
-    <div class="card p-4">
-        @if (currentView() === 'mini-view') {
+    @if (currentView() === 'mini-view') {
+        <div class="card p-4">
             <div class="flex justify-content-between align-items-center w-full gap-4">
                 <h2 class="m-0">
                     Patient Appointment
@@ -26,16 +26,109 @@
               
 
             <div>
-                {{ appointments() | json }}
+                <common-table 
+                    [data]="appointmentsData" 
+                    [cols]="appointmentsColumns"
+                    [dataKey]="'appointmentGuid'"
+                    [searchQuery]="searchQuery"
+                    [isLoading]="isLoading"
+                    [isMini]="true"
+                    (selectedItemsChange)="selectionChange($event)"
+                    >
+                </common-table>
             </div>
-        }
-    </div>
+        </div>
+    }
+    @else {
+        <div class="flex flex-column h-full">
+
+            <div class="flex my-4 gap-4 justify-content-between">
+
+                <div class="button-group-container p-0">
+                    @for (item of allViews; track $index) {
+                        <button class="header-text-button" [ngClass]="$index === currentViewIndex ? 'primary' : ''" (click)="viewChange($any(item.id), $index)">
+                            
+                            {{ item.label }} ({{ item['count'] }})
+                        
+                        </button>
+                    }
+                </div>
+
+                <div class="flex gap-2">
+                    <p-iconField class="h-full" iconPosition="left">
+                        <p-inputIcon styleClass="pi pi-search" />
+                        <input 
+                            type="text" 
+                            class="header-search" 
+                            pInputText 
+                            (input)="searchQuery = $any($event.target).value" 
+                            placeholder="Search placeholder" />
+                    </p-iconField>
+
+                    <button class="header-text-button" (click)="timeChangeMenu.toggle($event)">
+                        <span class="pi pi-calendar">
+                        </span>
+
+                        {{ allTimes[currentTimeIndex].label }}
+            
+                        <span class="pi pi-angle-down">
+                        </span>
+            
+                    </button>
+
+                    <button class="header-text-button primary" (click)="timeChangeMenu.toggle($event)">
+                        Add Appointment            
+                    </button>
+
+                </div>
+            </div>
+
+            <div class="overflow-auto flex-grow-1">
+                <common-table 
+                    [data]="appointmentsData" 
+                    [cols]="appointmentsColumns"
+                    [dataKey]="'appointmentGuid'"
+                    [searchQuery]="searchQuery"
+                    [isLoading]="isLoading"
+                    (selectedItemsChange)="selectionChange($event)"
+                    ></common-table>
+            </div>
+        </div>
+    }
 }
 @else {
     <div class="card m-2 p-2">
         @for (item of [].constructor(4); track $index) {
-            <p-skeleton height="4rem" width="18rem"></p-skeleton>
+            <p-skeleton height="4rem" width="full"></p-skeleton>
             <br>
         }
     </div>
 }
+
+<p-menu #timeChangeMenu [model]="allTimes" [popup]="true" />
+
+<p-menu #minitableActionButtonsMenu [model]="actionButtons" [popup]="true" (onHide)="itemRef = undefined" />
+
+
+<ng-template let-item="item" #tableActionButtons>
+
+    @if (currentView() === "full-view") {
+        <div class="flex gap-2">
+            <button (click)="rescheduleAction(item)" class="header-text-button">
+                Reschedule            
+            </button>
+            <button (click)="cancelAction(item)" class="header-text-button surface-card">
+                Cancel            
+            </button>
+        </div>
+    }
+
+    @else {
+        <div>
+            <p-button (onClick)="minitableActionButtonsMenu.toggle($event); itemRef = item" icon="pi pi-ellipsis-h" [rounded]="true" [text]="true" severity="secondary"/>
+        </div>
+        
+    }
+
+
+</ng-template>
