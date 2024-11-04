@@ -14,7 +14,7 @@ export interface IColumn {
     isSortable?: boolean;
     isFilterable?: boolean;
     isDisabled?: boolean;
-    isTooltipVisible?: boolean;
+    isTooltipVisible?: boolean; 
     tooltipFieldName?: string;
     isInlineEditAllowed?: boolean;
     colType?: string;
